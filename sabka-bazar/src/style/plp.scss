@@ -1,0 +1,52 @@
+.section-plp {
+    width: 68%;
+    margin: 0 auto;
+}
+
+.sidebar {
+    background-color: rgb(241, 241, 241);
+    height: 100vh;
+}
+
+.sidebar ul {
+    padding-left: 10px;
+}
+
+.sidebar ul li {
+    border-bottom: 1px solid grey;
+    list-style: none;
+    padding: 10px;
+
+}
+
+.products {
+}
+
+.item img {
+    width: 100%;
+}
+
+.item p {
+    background-color:rgb(241, 241, 241);
+}
+
+.item {
+box-sizing: border-box;
+border-bottom: 1px dotted rgb(241, 241, 241);
+border-right: 3px solid rgb(241, 241, 241);
+padding: 5px;
+}
+
+.price-tag a {
+    background-color: rgb(238, 92, 116);
+    color: #fff;
+    text-decoration: none;
+    padding: 5px;
+    margin-left: 2px;
+}
+
+@media only screen and (max-width: 600px) {
+    .item {
+        width: 100% !important;
+    }
+}
