@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Route, Link, BrowserRouter as Router } from 'react-router-dom'
 import './index.css';
-import App from './App';
+import Home from './components/home';
 import Login from './components/login';
 import Register from './components/register';
 import * as serviceWorker from './serviceWorker';
@@ -10,7 +10,7 @@ import * as serviceWorker from './serviceWorker';
 const routing = (
     <Router>
       <div>
-        <Route exact path="/" component={App} />
+        <Route exact path="/" component={Home} />
         <Route path="/login" component={Login} />
         <Route path="/register" component={Register} />
       </div>
