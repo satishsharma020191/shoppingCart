@@ -20,13 +20,14 @@ function Home(props) {
         width: '100%'
     };
 
-    function currentSlide(n){
-        showSlides(slideIndex = n);
-    }
-
-    var slideIndex = 1;
+let slideIndex = 1;
 showSlides(slideIndex);
 
+function currentSlide(n){
+        showSlides(slideIndex = n);
+}
+
+  
 function plusSlides(n) {
   showSlides(slideIndex += n);
 }
@@ -36,6 +37,7 @@ function currentSlide(n) {
 function showSlides(n) {
   var i;
   var slides = document.getElementsByClassName("mySlides");
+  console.log('printing slides', slides,n);
   var dots = document.getElementsByClassName("dot");
   if (n > slides.length) {slideIndex = 1}    
   if (n < 1) {slideIndex = slides.length}
@@ -45,8 +47,8 @@ function showSlides(n) {
   for (i = 0; i < dots.length; i++) {
       dots[i].className = dots[i].className.replace(" active", "");
   }
- // slides[slideIndex-1].style.display = "block";  
- // dots[slideIndex-1].className += " active";
+   // slides[slideIndex-1].style.display = "block";  
+   // dots[slideIndex-1].className += " active";
 }
 
 
