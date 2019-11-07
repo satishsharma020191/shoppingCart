@@ -1,8 +1,7 @@
 import React from "react";
-import "../../style/common/grid.scss";
-import "../../style/login.scss";
-//import logo from "../../static/images/logo.png";
-import Logo from "../../static/images/logo.png";
+import "../style/common/grid.scss";
+import "../style/common/style.scss";
+import Logo from "../static/images/logo.png";
 
 
 
