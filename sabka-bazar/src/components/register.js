@@ -1,40 +1,13 @@
 import React from "react";
 import "../style/common/grid.scss";
 import "../style/common/style.scss";
-import Logo from "../static/images/logo.png";
-
+import Header from './header';
+import Footer from './footer';
 
 
 
 function Register(props) {
-  return <div className="container"><header>
-  <div className="row">
-   <div className="col span-1-of-3 xyz">
-   <figure className="sabka-bazar-logo">
-       <img src={Logo} alt="logo"/>
-   </figure>
-   </div>
-   <div className="col span-1-of-3 xyz navigate">
-      <ul>
-          <li>Home</li>
-          <li>Products</li>
-      </ul>
-   </div>
-   <div className="col span-1-of-3 xyz navigate2">
-       <div className="row">
-           <ul>
-               <li>Sign in</li>
-               <li>Register</li>
-           </ul>
-      </div>
-      <div className="row">
-          
-          <a href="#" className="btn btn-cart"><i className="ion-ios-cart-outline icon-big"></i> 0 items</a>
-      </div>
-
-   </div>
-  </div>
-</header>
+  return <div className="container"><Header/>
 
 <section className="section-form">
             
@@ -83,11 +56,8 @@ function Register(props) {
         </section>
 
 
-<footer>
-   <p>
-       Copyright &copy; 2011-2018 sabka bazaar Grocery Supplies Pvt. Ltd
-   </p>
-</footer></div>;
+<Footer/>
+   </div>;
 }
 
 export default Register;
