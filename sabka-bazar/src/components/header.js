@@ -5,6 +5,12 @@ import Logo from "../static/images/logo.png";
 
 
 function Header(props) {
+
+    function cartOpen(){
+        console.log('cart click::');
+    }
+
+
   return <header>
   <div className="row">
    <div className="col span-1-of-3 xyz">
@@ -27,7 +33,7 @@ function Header(props) {
       </div>
       <div className="row">
           
-          <a href="#" className="btn btn-cart"><i className="ion-ios-cart-outline icon-big"></i> 0 items</a>
+          <a href="#" className="btn btn-cart" onClick={cartOpen}><i className="ion-ios-cart-outline icon-big"></i> 0 items</a>
       </div>
 
    </div>

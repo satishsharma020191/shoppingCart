@@ -6,6 +6,7 @@ import Home from './components/home';
 import Login from './components/login';
 import Register from './components/register';
 import Plp from './components/plp';
+import Cart from './components/cart';
 import * as serviceWorker from './serviceWorker';
 
 const routing = (
@@ -15,6 +16,7 @@ const routing = (
         <Route path="/login" component={Login} />
         <Route path="/register" component={Register} />
         <Route path="/plp" component={Plp} />
+        <Route path="/cart" component={Cart} />
       </div>
     </Router>
   )
