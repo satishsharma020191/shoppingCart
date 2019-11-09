@@ -13,7 +13,9 @@ import offer5 from "../static/images/offers/offer1.jpg";
 import fruit1 from "../static/images/category/fruits.png";
 import bakeryImg from "../static/images/category/bakery.png";
 
-
+import { CarouselProvider, Slider, Dot, Slide, ButtonBack, ButtonNext } from 'pure-react-carousel';
+import 'pure-react-carousel/dist/react-carousel.es.css';
+ 
 
 
 function Home(props) {  
@@ -21,91 +23,36 @@ function Home(props) {
         width: '100%'
     };
 
-let slideIndex = 1;
-showSlides(slideIndex);
-
-function currentSlide(n){
-        showSlides(slideIndex = n);
-}
-
-  
-function plusSlides(n) {
-  showSlides(slideIndex += n);
-}
-function currentSlide(n) {
-  showSlides(slideIndex = n);
-}
-
-function showSlides(n) {
-  // let i;
-  // let slides = document.getElementsByClassName("mySlides");
-  // console.log('printing slides', slides,n);
-  // let dots = document.getElementsByClassName("dot");
-  // if (n > slides.length) {slideIndex = 1}    
-  // if (n < 1) {slideIndex = slides.length}
-  // for (i = 0; i < slides.length; i++) {
-  //     slides[i].style.display = "block";  
-  // }
-  // for (i = 0; i < dots.length; i++) {
-  //     dots[i].className = dots[i].className.replace("active", "");
-  // }
-  // console.log('printing index',slideIndex-1);
-   // slides[slideIndex-1].style.display = "block";  
-   // dots[slideIndex-1].className += " active";
-}
-
 
   return <div className="container"><Header/>
 
 <section>
-    <div className="slide-container">
-    {/* Slideshow container */}
-<div className="slideshow-container">
 
 
-    {/* Full-width images with number and caption text */}
-    <div className="mySlides fade">
-      <div className="numbertext">1 / 5</div>
-      <img src={offer1} style={widthStyle} />
-      <div className="text">Caption Text</div>
-    </div>
-  
-    <div className="mySlides fade">
-      <div className="numbertext">2 / 5</div>
-      <img src={offer2} style={widthStyle} />
-      <div className="text">Caption Two</div>
-    </div>
-  
-    <div className="mySlides fade">
-      <div className="numbertext">3 / 5</div>
-      <img src={offer3} style={widthStyle} />
-      <div className="text">Caption Three</div>
-    </div>
-    <div className="mySlides fade">
-        <div className="numbertext">4 / 5</div>
-        <img src={offer4} style={widthStyle} />
-        <div className="text">Caption Four</div>
-      </div>
-      <div className="mySlides fade">
-        <div className="numbertext">5 / 5</div>
-        <img src={offer5} style={widthStyle} />
-        <div className="text">Caption Five</div>
-      </div>
-  
-    {/* Next and previous buttons */}
-    <a className="prev" onClick={(e)=>plusSlides(-1)}>&#10094;</a>
-    <a className="next" onClick={(e)=>plusSlides(1)}>&#10095;</a>
-  </div>
-  <br/>
-  
-  {/* The dots/circles */}
-  <div className="slides-dot">
-    <span className="dot" onClick={(e)=>currentSlide(1)}></span>
-    <span className="dot" onClick={(e)=>currentSlide(2)}></span>
-    <span className="dot" onClick={(e)=>currentSlide(3)}></span>
-    <span className="dot" onClick={(e)=>currentSlide(4)}></span>
-    <span className="dot" onClick={(e)=>currentSlide(5)}></span>
-  </div>
+  <div className="row home-tile clearfix">
+    <CarouselProvider naturalSlideWidth={100} naturalSlideHeight={30} totalSlides={3} >
+        <Slider>
+          <Slide index={0}><img src={offer1}/></Slide>
+          <Slide index={1}><img src={offer2}/></Slide>
+          <Slide index={2}><img src={offer3}/></Slide>
+        </Slider>
+      
+      <Dot slide={0}>
+        <span aria-hidden="true">&middot;</span>
+        <span className="sr-only">1</span>
+      </Dot>
+      <Dot slide={1}>
+        <span aria-hidden="true">&middot;</span>
+        <span className="sr-only">2</span>
+      </Dot>
+      <Dot slide={2}>
+        <span aria-hidden="true">&middot;</span>
+        <span className="sr-only">3</span>
+      </Dot>
+      
+        <ButtonBack>Back</ButtonBack>
+        <ButtonNext>Next</ButtonNext>
+      </CarouselProvider>
 </div>
 </section>
 
