@@ -9,8 +9,7 @@ function Model(props) {
 
   return <div className={showHideClassName}>
   <section className="modal-main">
-  <Cart handleClose={props.handleClose}/>
-    <button onClick={handleClose}>sat</button>
+  <Cart handleClose={handleClose}/>
   </section>
 </div>;
 }

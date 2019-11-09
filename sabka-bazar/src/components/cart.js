@@ -8,13 +8,12 @@ import lowPrice from "../static/images/lowest-price.png";
 
 
 function Cart(props) {
-    console.log('printing props:::', props);
   return  <div class="container">
   <div class="shopping-cart">
       <div class="shopping-cart-contents">
       <div class="shopping-cart-header">
        <p>My Cart(1 item)</p>
-       <i class="ion-ios-close-empty icon-close"></i>{props.handleClose}
+       <i class="ion-ios-close-empty icon-close" onClick={props.handleClose}></i>
       </div>
       <div class="shopping-cart-items">
       <figure class="apple-logo">
@@ -39,7 +38,7 @@ function Cart(props) {
       <div class="footer-bottom">
           <p>Promo code can be applied on payment page</p>
       </div>
-          <div class="footer-checkout">
+          <div class="footer-checkout" onClick={props.handleClose}>
           <span class="checkout-text">Proceed to Checkout</span>
             <div class="checkout-text-1">
           <span class="checkout-price">Rs. 187 </span>

@@ -13,8 +13,6 @@ function Header(props) {
         setModel(false);
       };
 
-  console.log('printing show', show);
-
   return <div><header>
   <div className="row">
    <div className="col span-1-of-3 xyz">
