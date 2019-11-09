@@ -27,32 +27,28 @@ function Home(props) {
   return <div className="container"><Header/>
 
 <section>
-
-
   <div className="row home-tile clearfix">
+  
     <CarouselProvider naturalSlideWidth={100} naturalSlideHeight={30} totalSlides={3} >
+    <div className="slide-container">
+    <div className="slideshow-container">
         <Slider>
-          <Slide index={0}><img src={offer1}/></Slide>
-          <Slide index={1}><img src={offer2}/></Slide>
-          <Slide index={2}><img src={offer3}/></Slide>
+          <Slide index={0} className="mySlides"><img src={offer1}/></Slide>
+          <Slide index={1} className="mySlides"><img src={offer2}/></Slide>
+          <Slide index={2} className="mySlides"><img src={offer3}/></Slide>
         </Slider>
       
-      <Dot slide={0}>
-        <span aria-hidden="true">&middot;</span>
-        <span className="sr-only">1</span>
-      </Dot>
-      <Dot slide={1}>
-        <span aria-hidden="true">&middot;</span>
-        <span className="sr-only">2</span>
-      </Dot>
-      <Dot slide={2}>
-        <span aria-hidden="true">&middot;</span>
-        <span className="sr-only">3</span>
-      </Dot>
+      <div class="slides-dot">
+        <Dot slide={0} className="dot"/>
+        <Dot slide={1} className="dot"/>
+        <Dot slide={2} className="dot"/>
+      </div>
       
-        <ButtonBack>Back</ButtonBack>
-        <ButtonNext>Next</ButtonNext>
-      </CarouselProvider>
+      <ButtonBack className="prev">Back</ButtonBack>
+      <ButtonNext className="next">Next</ButtonNext>
+      </div>
+      </div>
+    </CarouselProvider>
 </div>
 </section>
 
