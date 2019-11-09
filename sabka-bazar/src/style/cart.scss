@@ -8,7 +8,8 @@
     float: right;
     background-color: white;
     border-radius: 3px;
-    padding: 20px;
+    padding: 2px;
+    z-index: 1;
 }
 
 .shopping-cart-header {
@@ -18,8 +19,8 @@
 }
 
 .shopping-cart-header p{
-    padding-left: 15px;
-    padding-top: 15px;
+    padding-left: 0px;
+    padding-top: 0px;
     height: 5px;
 }
 

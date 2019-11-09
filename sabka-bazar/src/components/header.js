@@ -1,17 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
 import Logo from "../static/images/logo.png";
-
-
-
+import Modal from "./model";
 
 function Header(props) {
+    const [show, setModel] = useState(false);
+    let showModal = () => {
+        setModel(true);
+      };
+    
+    let hideModal = () => {
+        console.log('handle close clicked');
+        setModel(false);
+      };
 
-    function cartOpen(){
-        console.log('cart click::');
-    }
+  console.log('printing show', show);
 
-
-  return <header>
+  return <div><header>
   <div className="row">
    <div className="col span-1-of-3 xyz">
    <figure className="sabka-bazar-logo">
@@ -33,12 +37,14 @@ function Header(props) {
       </div>
       <div className="row">
           
-          <a href="#" className="btn btn-cart" onClick={cartOpen}><i className="ion-ios-cart-outline icon-big"></i> 0 items</a>
+          <a href="#" className="btn btn-cart" onClick={showModal}><i className="ion-ios-cart-outline icon-big"></i>items</a>
       </div>
 
    </div>
   </div>
 </header>
+<Modal show={show} handleClose={hideModal}/>
+</div>
 }
 
 export default Header;

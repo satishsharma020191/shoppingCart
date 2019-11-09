@@ -8,13 +8,13 @@ import lowPrice from "../static/images/lowest-price.png";
 
 
 function Cart(props) {
-
+    console.log('printing props:::', props);
   return  <div class="container">
   <div class="shopping-cart">
       <div class="shopping-cart-contents">
       <div class="shopping-cart-header">
        <p>My Cart(1 item)</p>
-       <span><i class="ion-ios-close-empty icon-close"></i></span>
+       <i class="ion-ios-close-empty icon-close"></i>{props.handleClose}
       </div>
       <div class="shopping-cart-items">
       <figure class="apple-logo">
