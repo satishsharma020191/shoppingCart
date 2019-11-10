@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "../style/common/grid.scss";
 import "../style/common/style.scss";
 import "../style/home.scss";
@@ -15,6 +15,10 @@ import bakeryImg from "../static/images/category/bakery.png";
 
 import { CarouselProvider, Slider, Dot, Slide, ButtonBack, ButtonNext } from 'pure-react-carousel';
 import 'pure-react-carousel/dist/react-carousel.es.css';
+import { bindActionCreators } from "redux";
+import { connect } from "react-redux";
+
+import { requestApiData } from "../actions";
  
 
 
@@ -22,6 +26,12 @@ function Home(props) {
     let widthStyle = {
         width: '100%'
     };
+
+    console.log('printing home props', props);
+
+    useEffect(()=>{
+      props.requestApiData();
+    },[])
 
 
   return <div className="container"><Header/>
@@ -89,4 +99,8 @@ function Home(props) {
  </div>;
 }
 
-export default Home;
+const mapStateToProps = state => ({data: state.data});
+
+const mapDispatchToProps = dispatch => bindActionCreators({requestApiData}, dispatch);
+
+export default connect(mapStateToProps, mapDispatchToProps)(Home);
