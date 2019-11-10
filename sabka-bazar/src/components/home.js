@@ -27,7 +27,7 @@ function Home(props) {
         width: '100%'
     };
 
-    console.log('printing home props', props);
+    console.log('printing home props', props.data);
 
     useEffect(()=>{
       props.requestApiData();
