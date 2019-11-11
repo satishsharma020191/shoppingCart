@@ -41,7 +41,7 @@ const routing = (
         <Route exact path="/" component={Home} />
         <Route path="/login" component={Login} />
         <Route path="/register" component={Register} />
-        <Route path="/plp" component={Plp} />
+        <Route path="/plp/:cid" component={Plp} />
         <Route path="/cart" component={Cart} />
       </div>
     </Router>

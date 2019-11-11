@@ -10,9 +10,18 @@
 }
 
 .navigate2 ul li{
+    text-decoration: none;
     list-style: none;
     float: left;
     margin-left:20px;
+}
+
+.navigate ul li a {
+    text-decoration: none;
+}
+
+.navigate2 ul li a {
+    text-decoration: none;
 }
 
 header {

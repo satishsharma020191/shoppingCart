@@ -10,11 +10,22 @@ import Footer from './footer';
 
 
 function Plp(props) {
+    console.log('printing pip props', props);
+    console.log('printing PLP props', props.match.params.cid);
+
+    let cid = props.match.params.cid;
+
+    
+
+
+
+
+
   return <div className="container"><Header/>
 
-<section class="section-plp">
-        <div class="row">
-            <div class="col span-2-of-10 sidebar">
+<section className="section-plp">
+        <div className="row">
+            <div className="col span-2-of-10 sidebar">
                 <ul>
                     <li>Fruits & Vegitables</li>
                     <li>Backery Cakes and Dairy</li>
@@ -25,53 +36,53 @@ function Plp(props) {
             </div>
 
 
-            <div class="col span-8-of-10 products">
-                <section class="section-products">
-                    <div class="row">
-                        <div class="col span-1-of-4 item">
+            <div className="col span-8-of-10 products">
+                <section className="section-products">
+                    <div className="row">
+                        <div className="col span-1-of-4 item">
                             <h3>Fresh Kiwi- Green, 3 pcs</h3>
                             <img src={`/static/images/products/fruit-n-veg/kiwi-green.jpg`}/>
                             <p>
                                 Kiwis are oval shaped with a brownish outer skin. the flesh is bright green and juicy with tiny edible black seeds.
                             </p>
 
-                            <div class="price-tag">
+                            <div className="price-tag">
                                     MRP Rs. 87 <a href="#">Buy Now</a>
                             </div>
                         </div>
         
-                        <div class="col span-1-of-4 item">
+                        <div className="col span-1-of-4 item">
                                 <h3>Fresh Kiwi- Green, 3 pcs</h3>
                                 <img src={`/static/images/products/fruit-n-veg/kiwi-green.jpg`}/>
                                 <p>
                                     Kiwis are oval shaped with a brownish outer skin. the flesh is bright green and juicy with tiny edible black seeds.
                                 </p>
     
-                                <div class="price-tag">
+                                <div className="price-tag">
                                         MRP Rs. 87 <a href="#">Buy Now</a>
                                 </div>
                         </div>
         
-                        <div class="col span-1-of-4 item">
+                        <div className="col span-1-of-4 item">
                                 <h3>Fresh Kiwi- Green, 3 pcs</h3>
                                 <img src={`/static/images/products/fruit-n-veg/kiwi-green.jpg`}/>
                                 <p>
                                     Kiwis are oval shaped with a brownish outer skin. the flesh is bright green and juicy with tiny edible black seeds.
                                 </p>
     
-                                <div class="price-tag">
+                                <div className="price-tag">
                                     MRP Rs. 87 <a href="#">Buy Now</a>
                                 </div>
                         </div>
         
-                        <div class="col span-1-of-4 item">
+                        <div className="col span-1-of-4 item">
                                 <h3>Fresh Kiwi- Green, 3 pcs</h3>
                                 <img src={`/static/images/products/fruit-n-veg/kiwi-green.jpg`}/>
                                 <p>
                                     Kiwis are oval shaped with a brownish outer skin. the flesh is bright green and juicy with tiny edible black seeds.
                                 </p>
     
-                                <div class="price-tag">
+                                <div className="price-tag">
                                  MRP Rs. 87 <a href="#">Buy Now</a>
                                 </div>
                         </div>

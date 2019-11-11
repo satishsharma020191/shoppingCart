@@ -4,6 +4,7 @@ import "../style/common/style.scss";
 import "../style/home.scss";
 import Header from './header';
 import Footer from './footer';
+import { Link } from 'react-router-dom';
 
 import { CarouselProvider, Slider, Dot, Slide, ButtonBack, ButtonNext } from 'pure-react-carousel';
 import 'pure-react-carousel/dist/react-carousel.es.css';
@@ -32,7 +33,7 @@ function Home(props) {
 <section>
   <div className="row home-tile clearfix">
   
-    <CarouselProvider naturalSlideWidth={100} naturalSlideHeight={30} totalSlides={banners && banners.length} >
+    <CarouselProvider naturalSlideWidth={100} naturalSlideHeight={30} isPlaying={true} totalSlides={banners && banners.length} >
     <div className="slide-container">
     <div className="slideshow-container">
         <Slider>
@@ -72,7 +73,7 @@ function Home(props) {
         <div className="col span-1-of-2 title-text clearfix">
             <h2>{obj.name}</h2>
             <p>{obj.description}</p>
-            <a href="#" className="btn-tile">Explore {obj.key}</a>
+            <Link to={`/plp/${obj.key}`} className="btn-tile">Explore {obj.key}</Link>
         </div>
     </div>
     : <div className="row home-tile">
@@ -80,7 +81,7 @@ function Home(props) {
     <div className="col span-1-of-2 title-text clearfix">
             <h2>{obj.name}</h2>
             <p>{obj.description}</p>
-            <a href="#" className="btn-tile">Explore {obj.key}</a>
+            <Link to={`/plp/${obj.key}`} className="btn-tile">Explore {obj.key}</Link>
         </div>
 
         <div className="col span-1-of-2">
