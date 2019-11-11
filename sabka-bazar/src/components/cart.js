@@ -3,8 +3,8 @@ import "../style/common/grid.scss";
 import "../style/common/style.scss";
 import "../style/common/ionicons.scss";
 import "../style/cart.scss";
-import apple from "../static/images/products/fruit-n-veg/apple.jpg";
-import lowPrice from "../static/images/lowest-price.png";
+// import apple from "/static/images/products/fruit-n-veg/apple.jpg";
+// import lowPrice from "/static/images/lowest-price.png";
 
 
 function Cart(props) {
@@ -17,7 +17,7 @@ function Cart(props) {
       </div>
       <div class="shopping-cart-items">
       <figure class="apple-logo">
-          <img src={apple} alt="apple"/>
+          <img src={`/static/images/products/fruit-n-veg/apple.jpg`} alt="apple"/>
       </figure>
           <p>Apple &mdash; Washington, Regular, 4 pcs</p>
           <span><i class="ion-ios-minus-outline icon-minus"></i></span>
@@ -30,7 +30,7 @@ function Cart(props) {
 
       <div class="lowest-price-gauranteed">
           <figure class="lowest-price-logo">
-          <img src={lowPrice} alt="lowest-price" />
+          <img src={`/static/images/lowest-price.png`} alt="lowest-price" />
           </figure>
           <span class="cheaper-anywhere">You won't find it cheaper anywhwere</span>
       </div>

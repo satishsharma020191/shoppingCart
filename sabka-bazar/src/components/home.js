@@ -5,14 +5,6 @@ import "../style/home.scss";
 import Header from './header';
 import Footer from './footer';
 
-import offer1 from "../static/images/offers/offer1.jpg";
-import offer2 from "../static/images/offers/offer1.jpg";
-import offer3 from "../static/images/offers/offer1.jpg";
-import offer4 from "../static/images/offers/offer1.jpg";
-import offer5 from "../static/images/offers/offer1.jpg";
-import fruit1 from "../static/images/category/fruits.png";
-import bakeryImg from "../static/images/category/bakery.png";
-
 import { CarouselProvider, Slider, Dot, Slide, ButtonBack, ButtonNext } from 'pure-react-carousel';
 import 'pure-react-carousel/dist/react-carousel.es.css';
 import { bindActionCreators } from "redux";
@@ -40,19 +32,20 @@ function Home(props) {
 <section>
   <div className="row home-tile clearfix">
   
-    <CarouselProvider naturalSlideWidth={100} naturalSlideHeight={30} totalSlides={3} >
+    <CarouselProvider naturalSlideWidth={100} naturalSlideHeight={30} totalSlides={banners && banners.length} >
     <div className="slide-container">
     <div className="slideshow-container">
         <Slider>
-        {categories.map((object, i) =>(
-          <Slide index={0} className="mySlides"><img src={offer1}/></Slide>)
-        )}
+            {banners && banners.map((obj, i)=>{
+                return (
+          <Slide index={i} className="mySlides"><img src={obj.bannerImageUrl} alt={obj.bannerImageAlt}/></Slide>
+            )})}
         </Slider>
       
       <div class="slides-dot">
-        <Dot slide={0} className="dot"/>
-        <Dot slide={1} className="dot"/>
-        <Dot slide={2} className="dot"/>
+        {banners && banners.map((obj, i)=>(
+        <Dot slide={i} className="dot"/>
+        ))}
       </div>
       
       <ButtonBack className="prev">Back</ButtonBack>
@@ -65,34 +58,41 @@ function Home(props) {
 
 
 <section>
-<div className="row home-tile clearfix">
-    <div className="col span-1-of-2">
-        <figure className="left-image">
-            <img src={fruit1} alt="fruit basket" />
-        </figure>
+
+ { categories && categories.map((obj, i)=>{
+     console.log('printing categories obj', obj);
+    return [
+        i%2==0 ?
+    <div className="row home-tile clearfix">
+        <div className="col span-1-of-2">
+            <figure className="left-image">
+                <img src={obj.imageUrl} alt="fruit basket" />
+            </figure>
         </div>
         <div className="col span-1-of-2 title-text clearfix">
-            <h2>Fruits & Vegetables</h2>
-            <p>A variety of fresh fruits and Vegetables</p>
-            <a href="#" className="btn-tile">Explore fruit-and-veg</a>
-            </div>
-</div>
-
-<div className="row home-tile ">
-       
-            <div className="col span-1-of-2 title-text clearfix">
-                <h2>Bakery Cakes and Dairy</h2>
-                <p>The best cupcakes, cookies, cakes, pies, cheesecakes, fresh bread, biscotti, muffins, bagels, fresh coffee, milk and more.</p>
-                <a href="#" className="btn-tile">Explore fruit-and-veg</a>
-                </div>
-
-                <div className="col span-1-of-2">
-                        <figure className="left-image">
-                            <img src={bakeryImg} alt="fruit basket" />
-                        </figure>
-                        </div>
+            <h2>{obj.name}</h2>
+            <p>{obj.description}</p>
+            <a href="#" className="btn-tile">Explore {obj.key}</a>
+        </div>
     </div>
+    : <div className="row home-tile">
+       
+    <div className="col span-1-of-2 title-text clearfix">
+            <h2>{obj.name}</h2>
+            <p>{obj.description}</p>
+            <a href="#" className="btn-tile">Explore {obj.key}</a>
+        </div>
 
+        <div className="col span-1-of-2">
+                <figure className="left-image">
+                    <img src={obj.imageUrl} alt="fruit basket" />
+                </figure>
+        </div>
+</div>
+    ]
+ })   
+
+ }
 
 </section>
 

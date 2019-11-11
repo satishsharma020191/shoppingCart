@@ -5,7 +5,7 @@ import "../style/plp.scss";
 import Header from './header';
 import Footer from './footer';
 
-import kiwiImg from "../static/images/products/fruit-n-veg/kiwi-green.jpg";
+// import kiwiImg from "/static/images/products/fruit-n-veg/kiwi-green.jpg";
 
 
 
@@ -30,7 +30,7 @@ function Plp(props) {
                     <div class="row">
                         <div class="col span-1-of-4 item">
                             <h3>Fresh Kiwi- Green, 3 pcs</h3>
-                            <img src={kiwiImg}/>
+                            <img src={`/static/images/products/fruit-n-veg/kiwi-green.jpg`}/>
                             <p>
                                 Kiwis are oval shaped with a brownish outer skin. the flesh is bright green and juicy with tiny edible black seeds.
                             </p>
@@ -42,7 +42,7 @@ function Plp(props) {
         
                         <div class="col span-1-of-4 item">
                                 <h3>Fresh Kiwi- Green, 3 pcs</h3>
-                                <img src={kiwiImg}/>
+                                <img src={`/static/images/products/fruit-n-veg/kiwi-green.jpg`}/>
                                 <p>
                                     Kiwis are oval shaped with a brownish outer skin. the flesh is bright green and juicy with tiny edible black seeds.
                                 </p>
@@ -54,7 +54,7 @@ function Plp(props) {
         
                         <div class="col span-1-of-4 item">
                                 <h3>Fresh Kiwi- Green, 3 pcs</h3>
-                                <img src={kiwiImg}/>
+                                <img src={`/static/images/products/fruit-n-veg/kiwi-green.jpg`}/>
                                 <p>
                                     Kiwis are oval shaped with a brownish outer skin. the flesh is bright green and juicy with tiny edible black seeds.
                                 </p>
@@ -66,7 +66,7 @@ function Plp(props) {
         
                         <div class="col span-1-of-4 item">
                                 <h3>Fresh Kiwi- Green, 3 pcs</h3>
-                                <img src={kiwiImg}/>
+                                <img src={`/static/images/products/fruit-n-veg/kiwi-green.jpg`}/>
                                 <p>
                                     Kiwis are oval shaped with a brownish outer skin. the flesh is bright green and juicy with tiny edible black seeds.
                                 </p>

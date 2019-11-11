@@ -8,6 +8,7 @@ import { fetchBannerData, fetchCategoriesData } from '../Api';
 function *getBannerData(){
     try{    
         const data = yield call(fetchBannerData);
+        console.log('saga called banner', data);
         yield put(receivedBannerData(data));
     } catch (e){
         console.log(e);

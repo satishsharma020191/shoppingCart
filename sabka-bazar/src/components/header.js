@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Logo from "../static/images/logo.png";
+// import Logo from "/static/images/logo.png";
 import Modal from "./model";
 
 function Header(props) {
@@ -17,7 +17,7 @@ function Header(props) {
   <div className="row">
    <div className="col span-1-of-3 xyz">
    <figure className="sabka-bazar-logo">
-       <img src={Logo} alt="logo"/>
+       <img src={'/static/images/logo.png'} alt="logo"/>
    </figure>
    </div>
    <div className="col span-1-of-3 xyz navigate">
