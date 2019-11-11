@@ -1,6 +1,12 @@
-export const REQUEST_API_DATA = "REQUEST_API_DATA";
-export const RECEIVED_API_DATA = "RECEIVED_API_DATA";
+import { REQUEST_BANNER_DATA, 
+        RECEIVED_BANNER_DATA, 
+        REQUEST_CATEGORIES_DATA, 
+        RECEIVED_CATEGORIES_DATA
+    } from "../constants";
 
-export const requestApiData = () => ({type: REQUEST_API_DATA});
+export const requestBannerData = () => ({type: REQUEST_BANNER_DATA});
+export const requestCategoriesData = () => ({type: REQUEST_CATEGORIES_DATA});
 
-export const receiveApiData = data => ({type: RECEIVED_API_DATA, payload: data});
+export const receivedBannerData = data => ({type: RECEIVED_BANNER_DATA, payload: data});
+
+export const receivedCategoriesData = data => ({type: RECEIVED_CATEGORIES_DATA, payload: data})

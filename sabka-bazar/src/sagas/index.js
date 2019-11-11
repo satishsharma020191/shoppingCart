@@ -1,21 +1,30 @@
-import {call, put, takeEvery, takeLatest} from "redux-saga/effects";
+import {call, put, takeEvery} from "redux-saga/effects";
 
-import { REQUEST_API_DATA, receiveApiData} from "../actions";
-import { fetchData } from '../Api';
+import { receivedBannerData, receivedCategoriesData } from "../actions";
+import { REQUEST_BANNER_DATA, REQUEST_CATEGORIES_DATA } from "../constants";
+import { fetchBannerData, fetchCategoriesData } from '../Api';
 
-//worker Saga: will be fired on USER_FETCH_REQUESTED actions
 
-function *getApiData(action){
+function *getBannerData(){
     try{    
-        const data = yield call(fetchData);
-        console.log('printing data in saga', data);
-        yield put(receiveApiData(data));
+        const data = yield call(fetchBannerData);
+        yield put(receivedBannerData(data));
     } catch (e){
+        console.log(e);
+    }
+}
+
+function *getCategoriesData(){
+    try{
+        const data = yield call(fetchCategoriesData);
+        yield put(receivedCategoriesData(data));
+    }catch(e){
         console.log(e);
     }
 }
 
 
 export default function* mySaga(){
-    yield takeEvery(REQUEST_API_DATA, getApiData);
+    yield takeEvery(REQUEST_BANNER_DATA, getBannerData);
+    yield takeEvery(REQUEST_CATEGORIES_DATA, getCategoriesData);
 }

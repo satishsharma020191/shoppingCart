@@ -18,19 +18,20 @@ import 'pure-react-carousel/dist/react-carousel.es.css';
 import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
 
-import { requestApiData } from "../actions";
+import { requestBannerData, requestCategoriesData } from "../actions";
  
 
 
 function Home(props) {  
-    let widthStyle = {
-        width: '100%'
-    };
 
-    console.log('printing home props', props.data);
+    console.log('printing home props', props);
+    const {banners, categories} = props;
+    console.log('printing banners', banners);
+    console.log('printing categories', categories);
 
     useEffect(()=>{
-      props.requestApiData();
+      props.requestBannerData();
+      props.requestCategoriesData();
     },[])
 
 
@@ -43,9 +44,9 @@ function Home(props) {
     <div className="slide-container">
     <div className="slideshow-container">
         <Slider>
-          <Slide index={0} className="mySlides"><img src={offer1}/></Slide>
-          <Slide index={1} className="mySlides"><img src={offer2}/></Slide>
-          <Slide index={2} className="mySlides"><img src={offer3}/></Slide>
+        {categories.map((object, i) =>(
+          <Slide index={0} className="mySlides"><img src={offer1}/></Slide>)
+        )}
         </Slider>
       
       <div class="slides-dot">
@@ -99,8 +100,9 @@ function Home(props) {
  </div>;
 }
 
-const mapStateToProps = state => ({data: state.data});
+const mapStateToProps = state => ({banners: state.data.banners,
+                                   categories : state.data.categories});
 
-const mapDispatchToProps = dispatch => bindActionCreators({requestApiData}, dispatch);
+const mapDispatchToProps = dispatch => bindActionCreators({requestBannerData, requestCategoriesData}, dispatch);
 
 export default connect(mapStateToProps, mapDispatchToProps)(Home);
