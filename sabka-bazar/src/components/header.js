@@ -1,9 +1,8 @@
 import React, { useState } from "react";
-// import Logo from "/static/images/logo.png";
 import { Link } from "react-router-dom";
 import Modal from "./model";
 
-function Header(props) {
+function Header() {
     const [show, setModel] = useState(false);
     let showModal = () => {
         setModel(true);
@@ -24,7 +23,7 @@ function Header(props) {
    <div className="col span-1-of-3 xyz navigate">
       <ul>
           <li><Link to={'/'}>Home</Link></li>
-          <li><Link to={'/plp'}>Products</Link></li>
+          <li><Link to={'/plp/all'}>Products</Link></li>
       </ul>
    </div>
    <div className="col span-1-of-3 xyz navigate2">

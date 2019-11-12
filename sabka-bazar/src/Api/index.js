@@ -26,3 +26,13 @@ export const fetchCategoriesData = async() => {
     console.log(e);
     }
 }
+
+export const fetchProductsData = async() => {
+    try{
+    const response = await fetch('http://localhost:5000/products');
+    let data = await response.json();
+    return data;        
+    } catch(e){
+        console.log(e);
+    }
+}

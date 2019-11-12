@@ -1,25 +1,23 @@
-import React from "react";
+import React, {useEffect} from "react";
 import "../style/common/grid.scss";
 import "../style/common/style.scss";
 import "../style/plp.scss";
 import Header from './header';
 import Footer from './footer';
-
-// import kiwiImg from "/static/images/products/fruit-n-veg/kiwi-green.jpg";
-
-
-
+import { bindActionCreators } from "redux";
+import { connect } from "react-redux";
+import {chunk} from 'lodash';
+import { requestProductsData, filterProductsData } from "../actions";
+let a = "";
 function Plp(props) {
-    console.log('printing pip props', props);
-    console.log('printing PLP props', props.match.params.cid);
-
+    const { products, categories } = props;
     let cid = props.match.params.cid;
 
-    
+console.log('printing products', products);
 
-
-
-
+useEffect(()=>{
+    props.requestProductsData({cid:cid, categories:categories});
+},[]);
 
   return <div className="container"><Header/>
 
@@ -38,55 +36,27 @@ function Plp(props) {
 
             <div className="col span-8-of-10 products">
                 <section className="section-products">
+                { products && products.map((obj, i)=>{
+                    return(
                     <div className="row">
                         <div className="col span-1-of-4 item">
-                            <h3>Fresh Kiwi- Green, 3 pcs</h3>
-                            <img src={`/static/images/products/fruit-n-veg/kiwi-green.jpg`}/>
+                            <h3>{obj.name}</h3>
+                            <img src={obj.imageURL}/>
                             <p>
-                                Kiwis are oval shaped with a brownish outer skin. the flesh is bright green and juicy with tiny edible black seeds.
+                            {obj.description}
                             </p>
 
                             <div className="price-tag">
-                                    MRP Rs. 87 <a href="#">Buy Now</a>
+                                    MRP Rs. {obj.price} <a href="#">Buy Now</a>
                             </div>
                         </div>
         
-                        <div className="col span-1-of-4 item">
-                                <h3>Fresh Kiwi- Green, 3 pcs</h3>
-                                <img src={`/static/images/products/fruit-n-veg/kiwi-green.jpg`}/>
-                                <p>
-                                    Kiwis are oval shaped with a brownish outer skin. the flesh is bright green and juicy with tiny edible black seeds.
-                                </p>
-    
-                                <div className="price-tag">
-                                        MRP Rs. 87 <a href="#">Buy Now</a>
-                                </div>
                         </div>
-        
-                        <div className="col span-1-of-4 item">
-                                <h3>Fresh Kiwi- Green, 3 pcs</h3>
-                                <img src={`/static/images/products/fruit-n-veg/kiwi-green.jpg`}/>
-                                <p>
-                                    Kiwis are oval shaped with a brownish outer skin. the flesh is bright green and juicy with tiny edible black seeds.
-                                </p>
-    
-                                <div className="price-tag">
-                                    MRP Rs. 87 <a href="#">Buy Now</a>
-                                </div>
-                        </div>
-        
-                        <div className="col span-1-of-4 item">
-                                <h3>Fresh Kiwi- Green, 3 pcs</h3>
-                                <img src={`/static/images/products/fruit-n-veg/kiwi-green.jpg`}/>
-                                <p>
-                                    Kiwis are oval shaped with a brownish outer skin. the flesh is bright green and juicy with tiny edible black seeds.
-                                </p>
-    
-                                <div className="price-tag">
-                                 MRP Rs. 87 <a href="#">Buy Now</a>
-                                </div>
-                        </div>
-                    </div>
+                
+                    )
+                    })}
+
+                    
                 </section>
             </div>
 
@@ -99,4 +69,8 @@ function Plp(props) {
 </div>;
 }
 
-export default Plp;
+const mapStateToProps = (state) => ({products: state.data.products,
+                                     categories: state.data.categories});
+const mapDispathToProps = (dispatch)=> bindActionCreators({requestProductsData, filterProductsData},dispatch);
+
+export default connect(mapStateToProps, mapDispathToProps)(Plp);

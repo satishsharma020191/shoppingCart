@@ -61,7 +61,6 @@ function Home(props) {
 <section>
 
  { categories && categories.map((obj, i)=>{
-     console.log('printing categories obj', obj);
     return [
         i%2==0 ?
     <div className="row home-tile clearfix">
