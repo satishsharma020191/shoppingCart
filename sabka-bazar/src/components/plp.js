@@ -1,9 +1,10 @@
-import React, {useEffect} from "react";
+import React, {useEffect, useState} from "react";
 import "../style/common/grid.scss";
 import "../style/common/style.scss";
 import "../style/plp.scss";
 import Header from './header';
 import Footer from './footer';
+import { Link } from 'react-router-dom';
 import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
 import {chunk} from 'lodash';
@@ -13,11 +14,11 @@ function Plp(props) {
     const { products, categories } = props;
     let cid = props.match.params.cid;
     let rows = [];
-console.log('printing products', products);
+    console.log('printing products', products);
 
 useEffect(()=>{
     props.requestProductsData({cid:cid, categories:categories});
-},[]);
+},[cid]);
 
   return <div className="container"><Header/>
 
@@ -25,11 +26,11 @@ useEffect(()=>{
         <div className="row">
             <div className="col span-2-of-10 sidebar">
                 <ul>
-                    <li>Fruits & Vegitables</li>
-                    <li>Backery Cakes and Dairy</li>
-                    <li>Beverages</li>
-                    <li>Beauty and Hygiene</li>
-                    <li>Baby Care</li>
+                    <li><Link to={'/plp/fruit-and-veg'}>Fruits & Vegitables</Link></li>
+                    <li><Link to={'/plp/bakery-cakes-dairy'}>Backery Cakes and Dairy</Link></li>
+                    <li><Link to={'/plp/beverages'}>Beverages</Link></li>
+                    <li><Link to={'/plp/beauty-hygiene'}>Beauty and Hygiene</Link></li>
+                    <li><Link to={'/plp/baby'}>Baby Care</Link></li>
                 </ul>
             </div>
 
