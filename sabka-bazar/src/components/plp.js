@@ -26,11 +26,11 @@ useEffect(()=>{
         <div className="row">
             <div className="col span-2-of-10 sidebar">
                 <ul>
-                    <li><Link to={'/plp/fruit-and-veg'}>Fruits & Vegitables</Link></li>
-                    <li><Link to={'/plp/bakery-cakes-dairy'}>Backery Cakes and Dairy</Link></li>
-                    <li><Link to={'/plp/beverages'}>Beverages</Link></li>
-                    <li><Link to={'/plp/beauty-hygiene'}>Beauty and Hygiene</Link></li>
-                    <li><Link to={'/plp/baby'}>Baby Care</Link></li>
+                    <li className={cid=='fruit-and-veg'?'active':''}><Link to={'/plp/fruit-and-veg'}>Fruits & Vegitables</Link></li>
+                    <li className={cid=='bakery-cakes-dairy'?'active':''}><Link to={'/plp/bakery-cakes-dairy'}>Backery Cakes and Dairy</Link></li>
+                    <li className={cid=='beverages'?'active':''}><Link to={'/plp/beverages'}>Beverages</Link></li>
+                    <li className={cid=='beauty-hygiene'?'active':''}><Link to={'/plp/beauty-hygiene'}>Beauty and Hygiene</Link></li>
+                    <li className={cid=='baby'?'active':''}><Link to={'/plp/baby'}>Baby Care</Link></li>
                 </ul>
             </div>
 
