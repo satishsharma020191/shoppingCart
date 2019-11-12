@@ -8,11 +8,11 @@ import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
 import {chunk} from 'lodash';
 import { requestProductsData, filterProductsData } from "../actions";
-let a = "";
+
 function Plp(props) {
     const { products, categories } = props;
     let cid = props.match.params.cid;
-
+    let rows = [];
 console.log('printing products', products);
 
 useEffect(()=>{
@@ -37,25 +37,19 @@ useEffect(()=>{
             <div className="col span-8-of-10 products">
                 <section className="section-products">
                 { products && products.map((obj, i)=>{
-                    return(
-                    <div className="row">
-                        <div className="col span-1-of-4 item">
-                            <h3>{obj.name}</h3>
-                            <img src={obj.imageURL}/>
-                            <p>
-                            {obj.description}
-                            </p>
-
-                            <div className="price-tag">
-                                    MRP Rs. {obj.price} <a href="#">Buy Now</a>
-                            </div>
+                        rows.push(<div className="col span-1-of-4 item">
+                        <h3>{obj.name}</h3>
+                        <img src={obj.imageURL}/>
+                        <p>{obj.description}</p>
+                        <div className="price-tag">
+                        MRP Rs. {obj.price} <a href="#">Buy Now</a>
                         </div>
-        
-                        </div>
-                
-                    )
-                    })}
+                    </div>);
+                })}
 
+                {(chunk(rows, 4).map(function(group) { 
+                    return <div className="row">{group}</div>
+                }))}    
                     
                 </section>
             </div>
