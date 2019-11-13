@@ -1,0 +1,126 @@
+*{
+    font-family: 'Dosis','Arial';
+    font-size: 18px;
+}
+.navigate ul li{
+    list-style: none;
+    float: left;
+    padding: 20px;
+    margin-top: 28px;
+}
+
+.navigate2 ul li{
+    text-decoration: none;
+    list-style: none;
+    float: left;
+    margin-left:20px;
+}
+
+.navigate ul li a {
+    text-decoration: none;
+}
+
+.navigate2 ul li a {
+    text-decoration: none;
+}
+
+header {
+    border-bottom: 2px solid #cfcfcf;
+    box-shadow: 3px 3px 2px rgb(250, 249, 249);
+}
+
+.sabka-bazar-logo img {
+height: auto;
+width: auto;
+float: right;
+}
+
+.row .xyz{
+    margin-top: 0;
+    padding-top: 0;
+
+}
+
+.icon-big {
+    font-size: 200%;
+    margin-right: 5px;
+    vertical-align: middle;
+}
+
+.btn {
+    display: inline-block;
+    width: 20%;
+    margin-top: 5%;
+    margin-left: 10%;
+    height: auto;
+    padding: 2%;
+    background-color: grey;
+    opacity: 0.7;
+    text-align: center;
+    text-decoration: none;
+    color: #000;
+    margin-bottom: -15px;
+    
+}
+
+.btn-text{
+    vertical-align: center;
+}
+
+.section-form {
+    width: 60%;
+    margin: 0 auto;
+}
+
+input {
+    border: 0;
+    outline: 0;
+    background: transparent;
+    border-bottom: 1px solid #cfcfcf;
+    padding-top: 10px;  
+}
+
+input:hover, input:active {
+    outline: 0;
+    background: transparent;
+    border-bottom: 2px solid #1a76ac;
+    
+}
+
+ .btn-login {
+    display: inline-block;
+    width: 77%;
+    background-color: rgb(214, 68, 92);
+    text-align: center;
+    color: #fff;
+    text-decoration: none;
+    padding: 5px;
+    margin-top: 30px;
+
+}
+
+footer {
+    width: 100%;
+    background-color: grey;
+    position: relative;
+    bottom: 0;
+    left: 0;
+}
+
+footer p {
+    padding: 20px;
+    margin-left: 19%; 
+}
+
+label {
+    font-size: 70%;
+    color: #1a76ac;
+}
+
+.section-form {
+    margin-top: 50px;
+}
+
+.form-input {
+    padding: 15px;
+}
