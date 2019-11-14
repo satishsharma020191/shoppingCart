@@ -8,10 +8,6 @@ import reducer from './reducers';
 import { Route, Link, BrowserRouter as Router } from 'react-router-dom'
 import './index.css';
 import Home from './containers/home';
-// import Login from './components/login';
-// import Register from './components/register';
-// import Plp from './components/plp';
-// import Cart from './components/cart';
 import * as serviceWorker from './serviceWorker';
 
 import rootSaga from './sagas';
