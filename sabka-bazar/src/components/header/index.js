@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import Modal from "./model";
+import Modal from "../model";
 
 function Header() {
     const [show, setModel] = useState(false);

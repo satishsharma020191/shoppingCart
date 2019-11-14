@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom';
 import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
 import {chunk} from 'lodash';
-import { requestProductsData, filterProductsData } from "../actions";
+import { requestProductsData, filterProductsData } from "../../actions";
 
 function Plp(props) {
     const { products, categories } = props;

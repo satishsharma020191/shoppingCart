@@ -7,11 +7,11 @@ import { logger } from 'redux-logger';
 import reducer from './reducers';
 import { Route, Link, BrowserRouter as Router } from 'react-router-dom'
 import './index.css';
-import Home from './components/home';
-import Login from './components/login';
-import Register from './components/register';
-import Plp from './components/plp';
-import Cart from './components/cart';
+import Home from './containers/home';
+// import Login from './components/login';
+// import Register from './components/register';
+// import Plp from './components/plp';
+// import Cart from './components/cart';
 import * as serviceWorker from './serviceWorker';
 
 import rootSaga from './sagas';
@@ -39,10 +39,10 @@ const routing = (
     <Router>
       <div>
         <Route exact path="/" component={Home} />
-        <Route path="/login" component={Login} />
+        {/* <Route path="/login" component={Login} />
         <Route path="/register" component={Register} />
         <Route path="/plp/:cid" component={Plp} />
-        <Route path="/cart" component={Cart} />
+        <Route path="/cart" component={Cart} /> */}
       </div>
     </Router>
     </Provider>

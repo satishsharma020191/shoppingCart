@@ -11,7 +11,7 @@ import 'pure-react-carousel/dist/react-carousel.es.css';
 import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
 
-import { requestBannerData, requestCategoriesData } from "../actions";
+import { requestBannerData, requestCategoriesData } from "../../actions";
  
 
 

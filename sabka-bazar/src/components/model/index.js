@@ -1,6 +1,6 @@
 import React from "react";
 import "../style/model.scss";
-import Cart from "../components/cart";
+import Cart from "../cart";
 
 function Model(props) {
     const {show,handleClose,children} = props;
