@@ -47,3 +47,4 @@ export default function* mySaga(){
     yield takeEvery(REQUEST_CATEGORIES_DATA, getCategoriesData);
     yield takeEvery(REQUEST_PRODUCTS_DATA, getProductsData);
 }
+

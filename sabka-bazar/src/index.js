@@ -10,7 +10,7 @@ import './index.css';
 import Home from './containers/home';
 import * as serviceWorker from './serviceWorker';
 
-import rootSaga from './sagas';
+import rootSaga from './containers/home/saga';
 
 const sagaMiddleware = createSagaMiddleware();
 
