@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
-import "../style/common/grid.scss";
-import "../style/common/style.scss";
-import "../style/home.scss";
-import Header from './header';
-import Footer from './footer';
+import "../../style/common/grid.scss";
+import "../../style/common/style.scss";
+import "../../style/home.scss";
+import Header from '../header';
+import Footer from '../footer';
 import { Link } from 'react-router-dom';
 
 import { CarouselProvider, Slider, Dot, Slide, ButtonBack, ButtonNext } from 'pure-react-carousel';

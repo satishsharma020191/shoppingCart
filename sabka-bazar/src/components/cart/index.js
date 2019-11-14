@@ -1,8 +1,5 @@
 import React from "react";
-import "../style/common/grid.scss";
-import "../style/common/style.scss";
-import "../style/common/ionicons.scss";
-import "../style/cart.scss";
+import "../../style/cart.scss";
 // import apple from "/static/images/products/fruit-n-veg/apple.jpg";
 // import lowPrice from "/static/images/lowest-price.png";
 
