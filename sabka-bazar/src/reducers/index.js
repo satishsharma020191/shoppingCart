@@ -1,5 +1,6 @@
 import { combineReducers } from "redux";
 
-import data from "./data";
+import data from "../containers/home/reducer";
+import login from "../containers/home/reducer";
 
-export default combineReducers({data});
+export default combineReducers({data, login});
