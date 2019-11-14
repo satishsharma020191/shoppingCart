@@ -1,19 +1,15 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import Home from '../../components/home';
-import 'pure-react-carousel/dist/react-carousel.es.css';
 import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
 
-import { requestBannerData, requestCategoriesData } from "../../actions";
+import { requestBannerData, requestCategoriesData } from "../home/actions";
  
 
 
 function HomeContainer(props) {  
 
-    console.log('printing home props', props);
     const {banners, categories} = props;
-    console.log('printing banners', banners);
-    console.log('printing categories', categories);
 
     useEffect(()=>{
       props.requestBannerData();
@@ -21,7 +17,7 @@ function HomeContainer(props) {
     },[])
 
 
-  return <Home/>;
+  return <Home banners={banners} categories={categories} />;
 }
 
 const mapStateToProps = state => ({banners: state.data.banners,
