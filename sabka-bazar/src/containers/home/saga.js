@@ -42,7 +42,7 @@ function *getProductsData(action){
 }
 
 
-export default function* mySaga(){
+export function* homeSaga(){
     yield takeEvery(REQUEST_BANNER_DATA, getBannerData);
     yield takeEvery(REQUEST_CATEGORIES_DATA, getCategoriesData);
     yield takeEvery(REQUEST_PRODUCTS_DATA, getProductsData);
