@@ -6,17 +6,9 @@ export default (state = {}, action) => {
 
             return state = {...state, products: action.payload}
         
-        case FILTER_PRODUCTS_DATA:    
-            
-                let catID = state.categories && state.categories.filter((d)=>{
-                    return d.key == action.payload;
-                })[0].id;
-                
-                console.log('printing state reducer plp', state);
-                console.log('printing catid reducer plp',catID);
-            
+        case FILTER_PRODUCTS_DATA:        
                 let filteredProducts = state.products && state.products.filter((d)=>{
-                    return d.category == catID;
+                    return d.category == action.payload;
                 });
 
                 console.log('filtered product called reducer plp', filteredProducts);

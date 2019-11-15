@@ -7,6 +7,7 @@ import { fetchProductsData } from './api';
 import { fetchCategoriesData } from '../home/api';
 
 function *getProductsData(action){
+        let catData = "";
         console.log('getProduct Data plp saga', action);
     try{
         const data = yield call(fetchProductsData);
@@ -14,18 +15,21 @@ function *getProductsData(action){
         yield put(receivedProductsData(data));
 
         if(!action.payload.categories){
-            const data = yield call(fetchCategoriesData);
-            yield put(receivedCategoriesData(data));
+            catData = yield call(fetchCategoriesData);
+            yield put(receivedCategoriesData(catData));
         }
 
+        
+        let categories = action.payload.categories ? action.payload.categories : catData;
+
+        console.log('printing PLP SAGA category data', categories);
+        let catID = categories && categories.filter((d)=>{
+            return d.key == action.payload.cid;
+        })[0].id;
+        console.log('plp saga category data ID', catID);
+
         if(action.payload.cid && action.payload.cid!='all'){
-            let catID = data && data.filter((d)=>{
-                return d.key == action.payload.cid;
-            })[0].id;
-
-            console.log('printing CID plp SAGA', catID);
-
-            yield put(filterProductsData(action.payload.cid));
+            yield put(filterProductsData(catID));
         }
     }catch(e){
         console.log(e);
