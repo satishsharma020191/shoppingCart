@@ -1,6 +1,6 @@
 import { combineReducers } from "redux";
 
-import data from "./containers/home/reducer";
-import login from "./containers/home/reducer";
+import home from "./containers/home/reducer";
+import plp from "./containers/plp/reducer";
 
-export default combineReducers({data, login});
+export default combineReducers({home, plp});

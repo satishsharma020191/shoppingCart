@@ -3,7 +3,7 @@ import Home from '../../components/home';
 import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
 
-import { requestBannerData, requestCategoriesData } from "../home/actions";
+import { requestBannerData, requestCategoriesData } from "./actions";
  
 
 
@@ -20,8 +20,8 @@ function HomeContainer(props) {
   return <Home banners={banners} categories={categories} />;
 }
 
-const mapStateToProps = state => ({banners: state.data.banners,
-                                   categories : state.data.categories});
+const mapStateToProps = state => ({banners: state.home.banners,
+                                   categories : state.home.categories});
 
 const mapDispatchToProps = dispatch => bindActionCreators({requestBannerData, requestCategoriesData}, dispatch);
 

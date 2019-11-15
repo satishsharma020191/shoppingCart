@@ -8,6 +8,7 @@ import reducer from './reducers';
 import { Route, Link, BrowserRouter as Router } from 'react-router-dom'
 import './index.css';
 import Home from './containers/home';
+import Plp from './containers/plp';
 import * as serviceWorker from './serviceWorker';
 
 import rootSaga from './rootSaga';
@@ -35,6 +36,7 @@ const routing = (
     <Router>
       <div>
         <Route exact path="/" component={Home} />
+        <Route path="/plp/:cid" component={Plp} />
         {/* <Route path="/login" component={Login} />
         <Route path="/register" component={Register} />
         <Route path="/plp/:cid" component={Plp} />

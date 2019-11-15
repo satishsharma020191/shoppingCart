@@ -1,24 +1,21 @@
-import React, {useEffect, useState} from "react";
-import "../style/common/grid.scss";
-import "../style/common/style.scss";
-import "../style/plp.scss";
-import Header from './header';
-import Footer from './footer';
+import React from "react";
+import "../../style/common/grid.scss";
+import "../../style/common/style.scss";
+import "../../style/plp.scss";
+import Header from '../header';
+import Footer from '../footer';
 import { Link } from 'react-router-dom';
-import { bindActionCreators } from "redux";
-import { connect } from "react-redux";
 import {chunk} from 'lodash';
-import { requestProductsData, filterProductsData } from "../../actions";
 
 function Plp(props) {
-    const { products, categories } = props;
-    let cid = props.match.params.cid;
+    const { products, categories, cid} = props;
+    // let cid = props.match.params.cid;
     let rows = [];
     console.log('printing products', products);
 
-useEffect(()=>{
-    props.requestProductsData({cid:cid, categories:categories});
-},[cid]);
+// useEffect(()=>{
+//     props.requestProductsData({cid:cid, categories:categories});
+// },[cid]);
 
   return <div className="container"><Header/>
 
@@ -64,8 +61,4 @@ useEffect(()=>{
 </div>;
 }
 
-const mapStateToProps = (state) => ({products: state.data.products,
-                                     categories: state.data.categories});
-const mapDispathToProps = (dispatch)=> bindActionCreators({requestProductsData, filterProductsData},dispatch);
-
-export default connect(mapStateToProps, mapDispathToProps)(Plp);
+export default Plp;
