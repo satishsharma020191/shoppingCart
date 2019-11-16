@@ -36,3 +36,16 @@ export const fetchProductsData = async() => {
         console.log(e);
     }
 }
+
+export const postAddtoCartData = async(data) => {
+    try{
+        // const response = await fetch('http://localhost:5000/addToCart');
+        // let data = await response.json();
+        //const response = await fetch('http://localhost:5000/products');
+        //let data = await response.json();
+        //console.log('add to cart response', data);
+        return {response: 'success'};
+    } catch(e){
+        console.log(e);
+    }
+}

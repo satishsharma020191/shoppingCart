@@ -3,12 +3,13 @@ import createSagaMiddleware from 'redux-saga';
 import ReactDOM from 'react-dom';
 import { createStore, applyMiddleware, compose } from 'redux';
 import { Provider } from 'react-redux';
-import { logger } from 'redux-logger';
 import reducer from './reducers';
-import { Route, Link, BrowserRouter as Router } from 'react-router-dom'
+import { Route, BrowserRouter as Router } from 'react-router-dom'
 import './index.css';
 import Home from './containers/home';
 import Plp from './containers/plp';
+import Login from './containers/login';
+import Register from './containers/register';
 import * as serviceWorker from './serviceWorker';
 
 import rootSaga from './rootSaga';
@@ -37,10 +38,8 @@ const routing = (
       <div>
         <Route exact path="/" component={Home} />
         <Route path="/plp/:cid" component={Plp} />
-        {/* <Route path="/login" component={Login} />
-        <Route path="/register" component={Register} />
-        <Route path="/plp/:cid" component={Plp} />
-        <Route path="/cart" component={Cart} /> */}
+        <Route path="/login" component={Login} />
+        <Route path="/register" component={Register}/>
       </div>
     </Router>
     </Provider>

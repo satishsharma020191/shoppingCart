@@ -3,9 +3,6 @@ import { REQUEST_BANNER_DATA,
     REQUEST_CATEGORIES_DATA, 
     RECEIVED_CATEGORIES_DATA,
     GET_CATEGORY_ID_BY_KEY,
-    REQUEST_PRODUCTS_DATA,
-    RECEIVED_PRODUCTS_DATA,
-    FILTER_PRODUCTS_DATA,
 } from "./constants";
 
 export const requestBannerData = () => ({type: REQUEST_BANNER_DATA});

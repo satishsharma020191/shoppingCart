@@ -1,43 +1,53 @@
 import {call, put, takeEvery} from "redux-saga/effects";
 
-import { receivedProductsData, filterProductsData } from "./actions";
+import { receivedProductsData, receivedAddToCart } from "./actions";
 import { receivedCategoriesData } from "../home/actions";
-import { REQUEST_PRODUCTS_DATA } from "./constants";
-import { fetchProductsData } from './api';
+import { REQUEST_PRODUCTS_DATA, REQUEST_ADD_TO_CART } from "./constants";
+import { fetchProductsData, postAddtoCartData} from './api';
 import { fetchCategoriesData } from '../home/api';
 
 function *getProductsData(action){
         let catData = "";
-        console.log('getProduct Data plp saga', action);
     try{
-        const data = yield call(fetchProductsData);
-        console.log('product data plp saga', data);
-        yield put(receivedProductsData(data));
+        const prodData = yield call(fetchProductsData);
 
+        // getting category id
         if(!action.payload.categories){
             catData = yield call(fetchCategoriesData);
             yield put(receivedCategoriesData(catData));
         }
 
-        
-        let categories = action.payload.categories ? action.payload.categories : catData;
+        if(action.payload.cid!=='all'){
+            let categories = action.payload.categories ? action.payload.categories : catData;
+            let catID = categories && categories.filter((d)=>{
+            return d.key === action.payload.cid;
+            })[0].id;
 
-        console.log('printing PLP SAGA category data', categories);
-        let catID = categories && categories.filter((d)=>{
-            return d.key == action.payload.cid;
-        })[0].id;
-        console.log('plp saga category data ID', catID);
-
-        if(action.payload.cid && action.payload.cid!='all'){
-            yield put(filterProductsData(catID));
+            let filteredProducts = prodData && prodData.filter((d)=>{
+                return d.category === catID;
+            });
+           yield put(receivedProductsData(filteredProducts));
+            }else{
+            yield put(receivedProductsData(prodData));
         }
     }catch(e){
         console.log(e);
     }
 }
 
+function *postAddtoCart(action){
+    //console.log('addtoCart Saga',action);
+    const response = yield call(postAddtoCartData);
+    console.log('response::', response);
+    if(response.response==='success'){
+        console.log('dispatch an action to update cart count state', action.payload);
+        yield put(receivedAddToCart(action.payload));
+    }
+}
+
 
 export function* plpSaga(){
     yield takeEvery(REQUEST_PRODUCTS_DATA, getProductsData);
+    yield takeEvery(REQUEST_ADD_TO_CART, postAddtoCart);
 }
 

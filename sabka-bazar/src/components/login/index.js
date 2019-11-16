@@ -1,8 +1,8 @@
 import React from "react";
-import "../style/common/grid.scss";
-import "../style/common/style.scss";
-import Header from './header';
-import Footer from './footer';
+import "../../style/common/grid.scss";
+import "../../style/common/style.scss";
+import Header from '../header';
+import Footer from '../footer';
 
 
 

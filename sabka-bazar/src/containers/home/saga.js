@@ -1,8 +1,8 @@
 import {call, put, takeEvery} from "redux-saga/effects";
 
 import { receivedBannerData, receivedCategoriesData } from "./actions";
-import { REQUEST_BANNER_DATA, REQUEST_CATEGORIES_DATA, REQUEST_PRODUCTS_DATA } from "./constants";
-import { fetchBannerData, fetchCategoriesData, fetchProductsData } from './api';
+import { REQUEST_BANNER_DATA, REQUEST_CATEGORIES_DATA } from "./constants";
+import { fetchBannerData, fetchCategoriesData } from './api';
 
 
 function *getBannerData(){

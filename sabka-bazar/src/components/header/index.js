@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Modal from "../model";
 
-function Header() {
+function Header(props) {
+    const {cartProducts} = props;
     const [show, setModel] = useState(false);
     let showModal = () => {
         setModel(true);
@@ -34,14 +35,13 @@ function Header() {
            </ul>
       </div>
       <div className="row">
-          
-          <a href="#" className="btn btn-cart" onClick={showModal}><i className="ion-ios-cart-outline icon-big"></i>items</a>
+          <a href="#" className="btn btn-cart" onClick={showModal}><img src={'/static/images/cart.svg'}/>{cartProducts ? cartProducts.length: 0} items</a>
       </div>
 
    </div>
   </div>
 </header>
-<Modal show={show} handleClose={hideModal}/>
+<Modal show={show} handleClose={hideModal} cartProducts={cartProducts}/>
 </div>
 }
 

@@ -9,9 +9,9 @@ import { CarouselProvider, Slider, Dot, Slide, ButtonBack, ButtonNext } from 'pu
 import 'pure-react-carousel/dist/react-carousel.es.css';
  
 function Home(props) {  
-    const {banners, categories} = props;
+    const {banners, categories, cartProducts} = props;
 
-  return <div className="container"><Header/>
+  return <div className="container"><Header cartProducts={cartProducts}/>
 <section>
   <div className="row home-tile clearfix">
   
@@ -44,7 +44,7 @@ function Home(props) {
 
  { categories && categories.map((obj, i)=>{
     return [
-        i%2==0 ?
+        i%2===0 ?
     <div className="row home-tile clearfix">
         <div className="col span-1-of-2">
             <figure className="left-image">

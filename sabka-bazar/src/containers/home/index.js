@@ -9,7 +9,7 @@ import { requestBannerData, requestCategoriesData } from "./actions";
 
 function HomeContainer(props) {  
 
-    const {banners, categories} = props;
+    const {banners, categories, cartProducts} = props;
 
     useEffect(()=>{
       props.requestBannerData();
@@ -17,11 +17,12 @@ function HomeContainer(props) {
     },[])
 
 
-  return <Home banners={banners} categories={categories} />;
+  return <Home banners={banners} categories={categories} cartProducts={cartProducts}/>;
 }
 
 const mapStateToProps = state => ({banners: state.home.banners,
-                                   categories : state.home.categories});
+                                   categories : state.home.categories,
+                                   cartProducts: state.plp.cartProducts});
 
 const mapDispatchToProps = dispatch => bindActionCreators({requestBannerData, requestCategoriesData}, dispatch);
 
