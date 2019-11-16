@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import Modal from "../model";
 
 function Header(props) {
-    const {cartProducts} = props;
+    const {cartProducts, plusProduct, minusProduct} = props;
     const [show, setModel] = useState(false);
     let showModal = () => {
         setModel(true);
@@ -41,7 +41,7 @@ function Header(props) {
    </div>
   </div>
 </header>
-<Modal show={show} handleClose={hideModal} cartProducts={cartProducts}/>
+<Modal show={show} handleClose={hideModal} cartProducts={cartProducts} plusProduct={plusProduct} minusProduct={minusProduct}/>
 </div>
 }
 

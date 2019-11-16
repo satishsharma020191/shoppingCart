@@ -1,23 +1,15 @@
 import React from "react";
 import "../../style/cart.scss";
 import {groupBy} from 'lodash';
-// import apple from "/static/images/products/fruit-n-veg/apple.jpg";
-// import lowPrice from "/static/images/lowest-price.png";
-
 
 function Cart(props) {
     let groupedProducts =[];
-    const {cartProducts} = props;
+    const {cartProducts, plusProduct, minusProduct} = props;
     let totalCheckoutPrice = 0;
 
     if(cartProducts){
     groupedProducts = groupBy(cartProducts,'id');  
     }
-
-    //console.log('gropued keyss:::', Object.entries(groupedProducts));
-    Object.values(groupedProducts).map((obj)=>{
-        console.log('printing products with count',obj.length, obj[0].imageURL);
-    })
 
   return  <div className="container">
   <div className="shopping-cart">
@@ -32,21 +24,17 @@ function Cart(props) {
                 return (
                     <div className="shopping-cart-items">
                     <figure className="apple-logo">
-                        <img src={obj[0].imageURL} alt="apple"/>
+                        <img src={obj[0].imageURL} alt={obj[0].name}/>
                     </figure>
                         <p>{obj[0].name}</p>
-                        <span><i className="ion-ios-minus-outline icon-minus"></i></span>
+                        <span className="icon-minus" onClick={()=> minusProduct(obj[0])}>-</span>
                         <span className="minus-1">{obj.length}</span>
-                        <span className="plus-icon"><i className="ion-ios-plus-outline icon-plus"></i></span>
+                        <span className="icon-plus" onClick={()=> plusProduct(obj[0])}>+</span>
                         <span className="icon-close"><i className="ion-ios-close-empty icon-close"></i></span>
                         <span className="product-price">{obj[0].price}</span>   
                         <span className="total-product-price">{obj[0].price * obj.length}</span>
                     </div>
             )})}
-
-              
-      
-      
         
       <div className="lowest-price-gauranteed">
           <figure className="lowest-price-logo">

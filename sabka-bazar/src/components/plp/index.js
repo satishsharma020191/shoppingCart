@@ -8,10 +8,10 @@ import { Link } from 'react-router-dom';
 import {chunk} from 'lodash';
 
 function Plp(props) {
-    const { products, cid, cartProducts, buyNow} = props;
+    const { products, cid, cartProducts, buyNow, plusProduct, minusProduct} = props;
         let rows = [];
 
-  return <div className="container"><Header cartProducts={cartProducts}/>
+  return <div className="container"><Header cartProducts={cartProducts} plusProduct={plusProduct} minusProduct={minusProduct}/>
 
 <section className="section-plp">
         <div className="row">
