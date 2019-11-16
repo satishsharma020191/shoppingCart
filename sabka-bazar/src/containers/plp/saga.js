@@ -37,9 +37,9 @@ function *getProductsData(action){
 
 function *postAddtoCart(action){
     //console.log('addtoCart Saga',action);
-    const response = yield call(postAddtoCartData);
+    const response = yield call(postAddtoCartData, action.payload);
     console.log('response::', response);
-    if(response.response==='success'){
+    if(response.response ==='Success'){
         console.log('dispatch an action to update cart count state', action.payload);
         yield put(receivedAddToCart(action.payload));
     }

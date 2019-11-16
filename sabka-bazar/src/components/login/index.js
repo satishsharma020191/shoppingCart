@@ -7,9 +7,9 @@ import Footer from '../footer';
 
 
 function Login(props) {
-
+    const {cartProducts, plusProduct, minusProduct} = props;
   return <div className="container">
-      <Header/>
+      <Header cartProducts={cartProducts} plusProduct={plusProduct} minusProduct={minusProduct}/>
 <section className="section-form">
    
    <div className="row">

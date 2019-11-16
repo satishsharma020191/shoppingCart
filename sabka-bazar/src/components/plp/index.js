@@ -29,7 +29,7 @@ function Plp(props) {
             <div className="col span-8-of-10 products">
                 <section className="section-products">
                 { products && products.map((obj, i)=>{
-                        rows.push(<div className="col span-1-of-4 item">
+                        rows.push(<div key={obj.id} className="col span-1-of-4 item">
                         <h3>{obj.name}</h3>
                         <img src={obj.imageURL}/>
                         <p>{obj.description}</p>
@@ -39,8 +39,8 @@ function Plp(props) {
                     </div>);
                 })}
 
-                {(chunk(rows, 4).map(function(group) { 
-                    return <div className="row">{group}</div>
+                {(chunk(rows, 4).map(function(group, i) { 
+                    return <div key={i} className="row">{group}</div>
                 }))}    
                     
                 </section>

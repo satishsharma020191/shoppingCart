@@ -39,12 +39,13 @@ export const fetchProductsData = async() => {
 
 export const postAddtoCartData = async(data) => {
     try{
-        // const response = await fetch('http://localhost:5000/addToCart');
-        // let data = await response.json();
-        //const response = await fetch('http://localhost:5000/products');
-        //let data = await response.json();
-        //console.log('add to cart response', data);
-        return {response: 'success'};
+        const apiRes = await fetch('http://localhost:5000/addToCart',{
+            method: 'post',
+            body: data.id
+          });
+          let resp = await apiRes.json();   
+         console.log('add to cart api called response', resp);
+        return resp;
     } catch(e){
         console.log(e);
     }

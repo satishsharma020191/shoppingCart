@@ -7,7 +7,8 @@ import Footer from '../footer';
 
 
 function Register(props) {
-  return <div className="container"><Header/>
+  const {cartProducts, plusProduct, minusProduct} = props;
+  return <div className="container"><Header cartProducts={cartProducts} plusProduct={plusProduct} minusProduct={minusProduct}/>
 
 <section className="section-form">
             

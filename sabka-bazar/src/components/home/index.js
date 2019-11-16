@@ -9,9 +9,9 @@ import { CarouselProvider, Slider, Dot, Slide, ButtonBack, ButtonNext } from 'pu
 import 'pure-react-carousel/dist/react-carousel.es.css';
  
 function Home(props) {  
-    const {banners, categories, cartProducts} = props;
+    const {banners, categories, cartProducts, plusProduct, minusProduct} = props;
 
-  return <div className="container"><Header cartProducts={cartProducts}/>
+  return <div className="container"><Header cartProducts={cartProducts} plusProduct={plusProduct} minusProduct={minusProduct}/>
 <section>
   <div className="row home-tile clearfix">
   
@@ -21,13 +21,13 @@ function Home(props) {
         <Slider>
             {banners && banners.map((obj, i)=>{
                 return (
-          <Slide index={i} className="mySlides"><img src={obj.bannerImageUrl} alt={obj.bannerImageAlt}/></Slide>
+          <Slide key={obj.id} index={i} className="mySlides"><img src={obj.bannerImageUrl} alt={obj.bannerImageAlt}/></Slide>
             )})}
         </Slider>
       
-      <div class="slides-dot">
+      <div className="slides-dot">
         {banners && banners.map((obj, i)=>(
-        <Dot slide={i} className="dot"/>
+        <Dot key={obj.id} slide={i} className="dot"/>
         ))}
       </div>
       
@@ -45,7 +45,7 @@ function Home(props) {
  { categories && categories.map((obj, i)=>{
     return [
         i%2===0 ?
-    <div className="row home-tile clearfix">
+    <div key={obj.id} className="row home-tile clearfix">
         <div className="col span-1-of-2">
             <figure className="left-image">
                 <img src={obj.imageUrl} alt="fruit basket" />
@@ -57,7 +57,7 @@ function Home(props) {
             <Link to={`/plp/${obj.key}`} className="btn-tile">Explore {obj.key}</Link>
         </div>
     </div>
-    : <div className="row home-tile">
+    : <div key={obj.id} className="row home-tile">
        
     <div className="col span-1-of-2 title-text clearfix">
             <h2>{obj.name}</h2>

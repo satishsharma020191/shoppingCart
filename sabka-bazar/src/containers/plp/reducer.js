@@ -6,12 +6,12 @@ export default (state = {}, action) => {
             return state = {...state, products: action.payload}
         
         case RECEIVED_ADD_TO_CART:
-            let cartProducts = [];
+            let cartProds = [];
             if(state.cartProducts){
-             cartProducts = state.cartProducts;
+                cartProds = [...state.cartProducts];
             }
-            cartProducts.push(action.payload);
-            return state = {...state, cartProducts: cartProducts}
+            cartProds.push(action.payload);
+            return state = {...state, cartProducts: cartProds}
         
         case REQUEST_ADD_PRODUCT:
         let addCartProducts = [];
