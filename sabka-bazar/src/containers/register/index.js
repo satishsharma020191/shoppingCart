@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import Register from '../../components/register';
 import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
@@ -7,6 +7,7 @@ import {requestAddProduct, requestMinusProduct} from "../plp/actions";
 
 function RegisterContainer(props) {  
   const {cartProducts} = props;
+  const [formError, setFormError] = useState(null);
 
 function plusProduct(product){
     props.requestAddProduct(product);
@@ -16,7 +17,37 @@ function minusProduct(product){
     props.requestMinusProduct(product);
 }
 
-  return <Register cartProducts={cartProducts} plusProduct={plusProduct} minusProduct={minusProduct}/>;
+function handleSubmit(event){
+  event.preventDefault();
+  console.log('printing register form data', event.target.password.value);
+  if(event.target.password.value != event.target.confirmpassword.value){
+      setFormError("password and confirm password didnt match");
+   return;   
+  }
+
+}
+
+function validateForm(e){
+       let password =  e.target.value;
+       // minimum 6 character
+       // must have number and alphabet
+       //cannot have space
+     
+       if(password.length < 6){
+           setFormError("must have 6 characters");
+           return;
+       }
+
+       if(!/\d/.test(password)){
+          setFormError("must have number");
+          return;
+      }
+
+       setFormError("");
+
+  }
+
+  return <Register cartProducts={cartProducts} plusProduct={plusProduct} minusProduct={minusProduct} handleSubmit={handleSubmit} validateForm={validateForm} formError={formError}/>;
 }
 
 

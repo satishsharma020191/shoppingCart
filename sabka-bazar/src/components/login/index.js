@@ -7,13 +7,13 @@ import Footer from '../footer';
 
 
 function Login(props) {
-    const {cartProducts, plusProduct, minusProduct} = props;
+    const {cartProducts, plusProduct, minusProduct, handleSubmit} = props;
+
   return <div className="container">
       <Header cartProducts={cartProducts} plusProduct={plusProduct} minusProduct={minusProduct}/>
 <section className="section-form">
-   
    <div className="row">
-       <form method="post" action="#" className="contact-form">
+       <form method="post" onSubmit={(e)=>handleSubmit(e)}>
 
            <div className="row">
                    <div className="col span-1-of-2">
@@ -25,15 +25,15 @@ function Login(props) {
                                <div>
                                <label htmlFor="email">Email</label> 
                                </div>
-                               <input type="text" className="email-input" name="email" size="50" placeholder="Email" required/>
+                               <input type="email" className="email-input" name="email" size="50" placeholder="Email" required/>
                            </div>
                            
                            <div className="row form-input">
-                               <input type="text" name="password" size="50" placeholder="Password" required />
+                               <input type="password" name="password" size="50" placeholder="Password" required />
                            </div>
 
                            <div className="row form-input">
-                               <a href="#" className="btn-login">Login</a>
+                               <button type="submit" className="btn-login">Login</button>
                            </div>
                    </div>
            </div>
