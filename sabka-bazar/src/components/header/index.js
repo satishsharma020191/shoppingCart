@@ -28,6 +28,8 @@ function Header(props) {
   return <div>
     <header>
   <div class="topnav">
+  <div className="row">
+  <div className="col span-7-of-10">
   <Link to={'/'}><img src={'/static/images/logo.png'} alt="logo"/></Link>
   <div id="myLinks" style={{display:displayProp}}>
     <Link to={'/'}>Home</Link>
@@ -35,19 +37,19 @@ function Header(props) {
     <Link to={'/login'}>Sign In</Link>
     <Link to={'/register'}>Register</Link>
   </div>
-  <div className="navigate">
-  <ul className="top-right">
-    <li><a href="#" onClick={showModal}><img src={'/static/images/cart.svg'}/><span>{cartProducts ? cartProducts.length: 0} items</span></a></li>
-    <li><a href="#" class="icon" onClick={()=>myFunction()}>
-    <i className="ion-ios-arrow-down"></i>
-  </a></li>
-  </ul>
   </div>
+  
+  <div className="col span-3-of-10">
+      <a href="#" class="icon">
+        <i onClick={showModal}> <img src={'/static/images/cart.svg'}/><span>{cartProducts ? cartProducts.length: 0} items</span> </i>
+    <i onClick={()=>myFunction()} className="ion-ios-arrow-down"></i></a>
+  </div>
+  </div></div>
   {/* <a href="#" className="btn-mobile-cart icon" onClick={showModal}><img src={'/static/images/cart.svg'}/><span>{cartProducts ? cartProducts.length: 0} items</span></a>
   <a href="#" class="icon" onClick={()=>myFunction()}>
     <i className="ion-ios-arrow-down"></i>
   </a> */}
-</div>
+
 
   <div className="row webHeader">
    <div className="col span-1-of-3">
