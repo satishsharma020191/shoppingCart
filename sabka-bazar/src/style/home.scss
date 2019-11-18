@@ -157,3 +157,9 @@ box-shadow: 3px 3px 2px rgb(250, 249, 249);
   height: auto; 
     }
 }
+
+@media screen and (max-width: 768px){
+  .prev, .next {
+    font-size: 12px;
+  }
+}

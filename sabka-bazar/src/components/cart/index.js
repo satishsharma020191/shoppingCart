@@ -1,6 +1,5 @@
 import React from "react";
 import "../../style/cart.scss";
-import "../../style/common/ionicons.scss";
 import {groupBy} from 'lodash';
 
 function Cart(props) {

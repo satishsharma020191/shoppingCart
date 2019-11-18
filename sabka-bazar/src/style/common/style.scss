@@ -2,44 +2,37 @@
     font-family: 'Dosis','Arial';
     font-size: 18px;
 }
+
 .navigate ul li{
     list-style: none;
-    float: left;
-    padding: 20px;
+    display: inline-block;
+    margin-left: 10%;
     margin-top: 28px;
 }
 
-.navigate2 ul li{
-    text-decoration: none;
-    list-style: none;
-    float: left;
-    margin-left:20px;
-}
+
+// .navigate2 ul li{
+//     text-decoration: none;
+//     list-style: none;
+//     display: inline-block;
+//     margin-left:10%;
+// }
 
 .navigate ul li a {
     text-decoration: none;
+    color: #000;
+    font-size: 12px;;
 }
 
-.navigate2 ul li a {
-    text-decoration: none;
-}
+// .navigate2 ul li a {
+//     text-decoration: none;
+// }
 
 header {
     border-bottom: 2px solid #cfcfcf;
     box-shadow: 3px 3px 2px rgb(250, 249, 249);
 }
 
-.sabka-bazar-logo img {
-height: auto;
-width: auto;
-float: right;
-}
-
-.row .xyz{
-    margin-top: 0;
-    padding-top: 0;
-
-}
 
 .icon-big {
     font-size: 200%;
@@ -47,20 +40,31 @@ float: right;
     vertical-align: middle;
 }
 
-.btn {
+.btn-cart {
     display: inline-block;
-    width: 20%;
+    width: 30%;
     margin-top: 5%;
-    margin-left: 10%;
-    height: auto;
-    padding: 2%;
+    padding: 2% 2% 1% 2%;
     background-color: grey;
     opacity: 0.7;
-    text-align: center;
+    vertical-align: middle;
     text-decoration: none;
     color: #000;
     margin-bottom: -15px;
+    img {
+        width: 25px;
+        height: 25px;
+    }
+    span {
+        vertical-align: super;
+        margin-left: 5%;
+    }
     
+}
+
+.btn-mobile-cart{
+    top:0;
+    width: 10%;
 }
 
 .btn-text{
@@ -99,6 +103,12 @@ input:hover, input:active {
 
 }
 
+.mySlides {
+    img{
+        width: 100%;
+    }
+} 
+
 footer {
     width: 100%;
     background-color: grey;
@@ -123,4 +133,96 @@ label {
 
 .form-input {
     padding: 15px;
+}
+
+
+// mobile css start
+  
+  .topnav {
+    overflow: hidden;
+    background-color: #d6445c;
+    position: relative;
+  }
+  
+  .topnav #myLinks {
+    display: none;
+  }
+  
+  .topnav a {
+    color: white;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    display: block;
+  }
+  
+  .topnav a.icon {
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  
+  .topnav a:hover {
+    background-color: #ddd;
+    color: black;
+  }
+  
+  .active {
+    background-color: #4CAF50;
+    color: white;
+  }
+// mobile css end 
+
+.topnav{
+    display: none;
+}
+
+@media screen and (max-width: 768px){
+    // .navigate{
+    //     ul{
+    //         li{
+    //             display: block;
+    //             margin-top: 0px;
+    //         }
+    //     }
+    // }
+
+    // .navigate2 { 
+    //     ul{
+    //         li{
+    //             display: block;
+    //             margin-top: 0px;
+    //         }
+    //     }
+
+    // }
+
+    [class*='span-']{
+        width: 100%;
+    }
+
+    .sabka-bazar-logo { img{
+        height: auto;
+        width: 30%;
+        display: block;
+        text-align: center;
+        }
+    }
+
+    .topnav{
+        display: block;
+    }
+
+    .webHeader{
+        display: none;
+    }
+
+    .topnav{
+        img{
+            width: 10%;
+            height: 10%;
+        }
+    }
+
 }
