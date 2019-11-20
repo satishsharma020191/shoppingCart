@@ -41,7 +41,7 @@ function Header(props) {
 
                     <div className="col span-3-of-10">
                         <div className="col span-2-of-3" style={{ display: 'inline' }}>
-                            <i onClick={showModal}> <img src={'/static/images/cart.svg'} /><span>{cartProducts ? cartProducts.length : 0} items</span> </i>
+                            <i onClick={showModal} className="btn-cart">  <img src={'/static/images/cart.svg'} /><span>{cartProducts ? cartProducts.length : 0} items</span> </i>
                         </div>
                         <div className="col span-1-of-3">
                             <i onClick={() => myFunction()} className="ion-ios-arrow-down"></i>
