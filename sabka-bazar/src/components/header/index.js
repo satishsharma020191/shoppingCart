@@ -40,29 +40,24 @@ function Header(props) {
   </div>
   
   <div className="col span-3-of-10">
-    <div className="col span-1-of-2" style={{display:'inline'}}>
+    <div className="col span-2-of-3" style={{display:'inline'}}>
         <i onClick={showModal}> <img src={'/static/images/cart.svg'}/><span>{cartProducts ? cartProducts.length: 0} items</span> </i>
     </div>
-    <div className="col span-1-of-2" style={{display:'inline', top:0, right:0}}>
+    <div className="col span-1-of-3">
     <i onClick={()=>myFunction()} className="ion-ios-arrow-down"></i>
     </div>
     
   </div>
   </div></div>
-  {/* <a href="#" className="btn-mobile-cart icon" onClick={showModal}><img src={'/static/images/cart.svg'}/><span>{cartProducts ? cartProducts.length: 0} items</span></a>
-  <a href="#" class="icon" onClick={()=>myFunction()}>
-    <i className="ion-ios-arrow-down"></i>
-  </a> */}
+ 
 
 
   <div className="row webHeader">
   <div className="col span-1-of-12"></div>
-   <div className="col span-2-of-12">
-   <figure className="sabka-bazar-logo">
+   <div className="col span-2-of-12 sabka-bazar-logo">
        <Link to={'/'}><img src={'/static/images/logo.png'} alt="logo"/></Link>
-   </figure>
    </div>
-   <div className="col span-6-of-12 navigate">
+   <div className="col span-6-of-12 navigate navigation-main">
       <ul>
           <li><Link to={'/'}>Home</Link></li>
           <li><Link to={'/plp/all'}>Products</Link></li>
@@ -76,7 +71,7 @@ function Header(props) {
            </ul>
       </div>
       <div className="row">
-         <center><a href="#" className="btn-cart" onClick={showModal}><img src={'/static/images/cart.svg'}/><span>{cartProducts ? cartProducts.length: 0} items</span></a></center> 
+        <a href="#" className="btn-cart" onClick={showModal}><img src={'/static/images/cart.svg'}/><span>{cartProducts ? cartProducts.length: 0} items</span></a> 
       </div>
 
    </div>

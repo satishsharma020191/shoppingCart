@@ -51,7 +51,7 @@ function Home(props) {
                 <img src={obj.imageUrl} alt="fruit basket" />
             </figure>
         </div>
-        <div className="col span-1-of-2 title-text clearfix">
+        <div className="col span-1-of-2 title-text">
             <h2>{obj.name}</h2>
             <p>{obj.description}</p>
             <Link to={`/plp/${obj.key}`} className="btn-tile">Explore {obj.key}</Link>
@@ -59,7 +59,7 @@ function Home(props) {
     </div>
     : <div key={obj.id} className="row home-tile">
        
-    <div className="col span-1-of-2 title-text clearfix">
+    <div className="col span-1-of-2 title-text">
             <h2>{obj.name}</h2>
             <p>{obj.description}</p>
             <Link to={`/plp/${obj.key}`} className="btn-tile">Explore {obj.key}</Link>

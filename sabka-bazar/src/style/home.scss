@@ -142,19 +142,12 @@ box-shadow: 3px 3px 2px rgb(250, 249, 249);
     margin-top: 3%;
 }
 
-.clearfix {zoom: 1;}
-.clearfix:after {
-    content: '.';
-    clear: both;
-    display: block;
-    height: 0;
-    visibility: hidden;
-}
+
 
 @media only screen and (max-width:1023px){
     .left-image img {
          width: 100%;
-  height: auto; 
+         height: auto; 
     }
 }
 
