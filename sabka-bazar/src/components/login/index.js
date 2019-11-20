@@ -26,11 +26,12 @@ function Login(props) {
                                     <label htmlFor="email">Email</label>
                                 </div>
                                 <input type="email" className="email-input" name="email" size="50" placeholder="Email" required
-                                    aria-required="true" aria-describedby="email-required" />
+                                    aria-required="true" />
                             </div>
 
                             <div className="row form-input">
-                                <input type="password" name="password" size="50" placeholder="Password" required />
+                                <input type="password" name="password" size="50" placeholder="Password" required
+                                    aria-required="true" />
                             </div>
 
                             <div className="row form-input">

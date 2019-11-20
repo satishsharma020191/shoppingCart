@@ -27,23 +27,23 @@ function Register(props) {
                                 <div>
                                     <label htmlFor="email">First Name</label>
                                 </div>
-                                <input type="text" className="email-input" name="firstname" size="50" placeholder="First Name" required />
+                                <input type="text" className="email-input" name="firstname" size="50" placeholder="First Name" required aria-required="true" />
                             </div>
 
                             <div className="row form-input">
-                                <input type="text" name="lastname" size="50" placeholder="Last Name" required />
+                                <input type="text" name="lastname" size="50" placeholder="Last Name" required aria-required="true" />
                             </div>
 
                             <div className="row form-input">
-                                <input type="email" name="email" size="50" placeholder="Email" required />
+                                <input type="email" name="email" size="50" placeholder="Email" required aria-required="true" />
                             </div>
 
                             <div className="row form-input">
-                                <input type="password" name="password" size="50" onChange={(e) => validateForm(e)} placeholder="Password" required />
+                                <input type="password" name="password" size="50" onChange={(e) => validateForm(e)} placeholder="Password" required aria-required="true" />
                             </div>
 
                             <div className="row form-input">
-                                <input type="password" name="confirmpassword" onChange={(e) => validateForm(e)} size="50" placeholder="Confirm Password" required />
+                                <input type="password" name="confirmpassword" onChange={(e) => validateForm(e)} size="50" placeholder="Confirm Password" required aria-required="true" />
                             </div>
 
                             <div className="row form-input">
