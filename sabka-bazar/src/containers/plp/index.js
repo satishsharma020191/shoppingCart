@@ -3,37 +3,38 @@ import Plp from '../../components/plp';
 import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
 import { requestProductsData, requestaddToCart, requestAddProduct, requestMinusProduct } from "./actions";
- 
-function PlpContainer(props) {  
-    const { products, categories, cartProducts} = props;
+
+function PlpContainer(props) {
+    const { products, categories, cartProducts } = props;
     let cid = props.match.params.cid;
 
-    console.log('printing home cat',categories);
-    
-    useEffect(()=>{
-    props.requestProductsData({cid:cid, categories:categories});
-    },[cid]);
+    console.log('printing home cat', categories);
 
-    function buyNow(product){
+    useEffect(() => {
+        props.requestProductsData({ cid: cid, categories: categories });
+    }, [cid]);
+
+    function buyNow(product) {
         props.requestaddToCart(product);
 
     }
 
-    function plusProduct(product){
+    function plusProduct(product) {
         props.requestAddProduct(product);
     }
 
-    function minusProduct(product){
+    function minusProduct(product) {
         props.requestMinusProduct(product);
     }
 
-  return <Plp products={products} cid={cid} cartProducts={cartProducts} buyNow={buyNow} plusProduct={plusProduct} minusProduct={minusProduct}/>;
+    return <Plp products={products} cid={cid} cartProducts={cartProducts} buyNow={buyNow} plusProduct={plusProduct} minusProduct={minusProduct} />;
 }
 
-const mapStateToProps = (state) => ({products: state.plp.products,
-                                     categories: state.home.categories,
-                                     cartProducts: state.plp.cartProducts
-                                    });
-const mapDispatchToProps = (dispatch)=> bindActionCreators({requestProductsData, requestaddToCart, requestAddProduct, requestMinusProduct},dispatch);
+const mapStateToProps = (state) => ({
+    products: state.plp.products,
+    categories: state.home.categories,
+    cartProducts: state.plp.cartProducts
+});
+const mapDispatchToProps = (dispatch) => bindActionCreators({ requestProductsData, requestaddToCart, requestAddProduct, requestMinusProduct }, dispatch);
 
 export default connect(mapStateToProps, mapDispatchToProps)(PlpContainer);

@@ -19,7 +19,7 @@ const sagaMiddleware = createSagaMiddleware();
 
 const composeEnhancers =
   typeof window === 'object' &&
-  window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ ?   
+    window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ ?
     window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__({
       // Specify extension’s options like name, actionsBlacklist, actionsCreators, serialize...
     }) : compose;
@@ -39,11 +39,11 @@ const routing = (
         <Route exact path="/" component={Home} />
         <Route path="/plp/:cid" component={Plp} />
         <Route path="/login" component={Login} />
-        <Route path="/register" component={Register}/>
+        <Route path="/register" component={Register} />
       </div>
     </Router>
-    </Provider>
-  )
+  </Provider>
+)
 
 ReactDOM.render(routing, document.getElementById('root'));
 
