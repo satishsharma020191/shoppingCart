@@ -19,11 +19,11 @@ function Register(props) {
                 <form method="post" className="contact-form" onSubmit={(e) => handleSubmit(e)}>
 
                     <div className="row">
-                        <div className="col span-1-of-2">
+                        <div className="col span-1-of-2 form-heading">
                             <h1>Signup</h1>
                             <p>We do not share your personal details with anyone.</p>
                         </div>
-                        <div className="col span-1-of-2">
+                        <div className="col span-1-of-2 form-data">
                             <div className="row form-input">
                                 <div>
                                     <label htmlFor="email">First Name</label>
