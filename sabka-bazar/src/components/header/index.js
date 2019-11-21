@@ -17,7 +17,7 @@ function Header(props) {
         setModel(false);
     };
 
-    function myFunction() {
+    function showMenu() {
         if (displayProp === "block") {
             setDisplayProp('none');
         } else {
@@ -29,7 +29,7 @@ function Header(props) {
         <header>
             <div class="topnav">
                 <div className="row">
-                    <div className="col span-7-of-10">
+                    <div className="col sm-7-of-10">
                         <Link to={'/'}><img src={'/static/images/logo.png'} alt="logo" /></Link>
                         <div id="myLinks" style={{ display: displayProp }}>
                             <Link to={'/'}>Home</Link>
@@ -39,12 +39,12 @@ function Header(props) {
                         </div>
                     </div>
 
-                    <div className="col span-3-of-10">
-                        <div className="col span-2-of-3" style={{ display: 'inline' }}>
-                            <i onClick={showModal} className="btn-cart">  <img src={'/static/images/cart.svg'} /><span>{cartProducts ? cartProducts.length : 0} items</span> </i>
+                    <div className="col sm-3-of-10">
+                        <div className="col sm-2-of-3">
+                            <i onClick={showModal} className="btn-cart">  <img src={'/static/images/cart.svg'} /><span>({cartProducts ? cartProducts.length : 0})</span></i>
                         </div>
-                        <div className="col span-1-of-3">
-                            <i onClick={() => myFunction()} className="ion-ios-arrow-down"></i>
+                        <div className="col sm-1-of-3 btn-cart">
+                            <i onClick={() => showMenu()} className="ion-ios-arrow-down"></i>
                         </div>
 
                     </div>

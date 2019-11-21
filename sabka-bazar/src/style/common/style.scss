@@ -305,7 +305,7 @@
 
 
   .btn-cart {
-    display: inline-block;
+    display: block;
     width: 50%;
     padding: 4% 4% 1% 4%;
     background-color: grey;
@@ -336,6 +336,27 @@
         margin-left: 19%; 
     }
 
+
+    .sm-7-of-10 {
+        width: 69.52%;
+    }
+    
+    .sm-3-of-10 {
+        width: 28.88%;
+    }
+
+    .sm-2-of-3 {
+        width: 66.13%;
+    }
+
+    .sm-1-of-3 {
+        width: 32.26%;
+        font-size: 25px;
+        height: 100%;
+        margin-top: 20px;
+        margin-left: 1px;
+
+    }
 // mobile css end 
 
 
@@ -392,6 +413,7 @@ header {
         }
         
     }
+    
 
     .sabka-bazar-logo { 
         img{
