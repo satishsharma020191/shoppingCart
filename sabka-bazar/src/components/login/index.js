@@ -17,11 +17,11 @@ function Login(props) {
                 <form method="post" onSubmit={(e) => handleSubmit(e)}>
 
                     <div className="row">
-                        <div className="col span-1-of-2">
+                        <div className="col span-1-of-2 form-heading">
                             <h1>Login</h1>
                             <p>Get access to your orders wish list and recommendations </p>
                         </div>
-                        <div className="col span-1-of-2">
+                        <div className="col span-1-of-2 form-data">
                             <div className="row form-input">
                                 <div>
                                     <label htmlFor="email">Email</label>

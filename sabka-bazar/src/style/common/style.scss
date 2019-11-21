@@ -217,7 +217,7 @@
 // writing css mobile first approach
 *{
     font-family: 'Dosis','Arial';
-    font-size: 18px;
+    font-size: 14px;
     box-sizing: border-box;
     }
  
@@ -268,7 +268,7 @@
 
       .topnav {
     overflow: hidden;
-    background-color: #d6445c;
+    background-color: #eeeaea;
     position: relative;
   }
   
@@ -277,7 +277,7 @@
   }
   
   .topnav a {
-    color: white;
+    color: #000;
     padding: 14px 16px;
     text-decoration: none;
     font-size: 17px;
@@ -341,6 +341,9 @@
 
 
 @media screen and (min-width: 768px){ 
+ *{
+     font-size: 18px;
+ }   
 .navigate ul li{
     list-style: none;
     display: inline-block;
@@ -353,7 +356,7 @@
 }
 
 .navigation-main{
-    text-align: center;
+    text-align: left;
     margin-top: 50px;
 }
 

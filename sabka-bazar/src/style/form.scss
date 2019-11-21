@@ -1,6 +1,7 @@
 input {
     border: 0;
     outline: 0;
+    width: 80%;
     background: transparent;
     border-bottom: 1px solid #cfcfcf;
     padding-top: 10px;  
@@ -15,7 +16,7 @@ input:hover, input:active {
 
  .btn-login {
     display: inline-block;
-    width: 77%;
+    width: 80%;
     background-color: rgb(214, 68, 92);
     text-align: center;
     color: #fff;
@@ -26,15 +27,27 @@ input:hover, input:active {
 }
 
 .section-form {
-        width: 60%;
+        padding-left: 20%;
+        padding-right: 20%;
         margin: 0 auto;
     }
 
-    .form-input {
-            padding: 15px;
-        }    
+.form-input {
+            padding: 2% 0;
+    }    
 
-        label {
-                font-size: 70%;
+label {
+        font-size: 70%;
                 color: #1a76ac;
-            }      
+        } 
+        
+
+        .form-heading{
+            h1{
+                font-size: 150%;
+            }
+
+            p {
+                font-size: 80%;
+            }
+        }
