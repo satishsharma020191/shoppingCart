@@ -3,11 +3,12 @@ import Register from '../../components/register';
 import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
 import { requestAddProduct, requestMinusProduct } from "../plp/actions";
+import {validator} from '../../utils'; 
 
 
 function RegisterContainer(props) {
     const { cartProducts } = props;
-    const [formError, setFormError] = useState(null);
+    const [formError, setFormError] = useState({});
 
     function plusProduct(product) {
         props.requestAddProduct(product);
@@ -25,27 +26,35 @@ function RegisterContainer(props) {
             return;
         }
 
+        
     }
 
-    function validateForm(e) {
-        let password = e.target.value;
-        // minimum 6 character
-        // must have number and alphabet
-        //cannot have space
 
-        if (password.length < 6) {
-            setFormError("must have 6 characters");
-            return;
-        }
-
-        if (!/\d/.test(password)) {
-            setFormError("must have number");
-            return;
-        }
-
-        setFormError("");
-
+    function validateForm(e, type){
+        let value = e.target.value;
+        console.log('printing value validateForm', value);
+        let passvalidate = validator.passwordRules(value);
+        console.log('password validate:::', passvalidate);
     }
+    // function validateForm(e) {
+    //     let password = e.target.value;
+    //     // minimum 6 character
+    //     // must have number and alphabet
+    //     //cannot have space
+
+    //     if (password.length < 6) {
+    //         setFormError("must have 6 characters");
+    //         return;
+    //     }
+
+    //     if (!/\d/.test(password)) {
+    //         setFormError("must have number");
+    //         return;
+    //     }
+
+    //     setFormError("");
+
+    // }
 
     return <Register cartProducts={cartProducts} plusProduct={plusProduct} minusProduct={minusProduct} handleSubmit={handleSubmit} validateForm={validateForm} formError={formError} />;
 }

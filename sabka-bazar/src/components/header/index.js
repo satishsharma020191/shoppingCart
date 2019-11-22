@@ -27,7 +27,7 @@ function Header(props) {
 
     return <div>
         <header>
-            <div class="topnav">
+            <div className="topnav">
                 <div className="row">
                     <div className="col sm-7-of-10">
                         <Link to={'/'}><img src={'/static/images/logo.png'} alt="logo" /></Link>
