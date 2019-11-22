@@ -1,13 +1,13 @@
 export const validator = {
-    passwordRules : (password)=> {
-        if (password.length < 6) {
-            return {type:'password', error:true ,message:'password must have 6 characters'};
+    passwordRules : (value, type)=> {
+        if (value && value.length < 6) {
+            return {type:type, error:true ,message:`${type} must have 6 characters`};
         }
 
-        if (!/\d/.test(password)) {
-            return {type:'password', error:true ,message:'password must have number'};
+        if (value && !/\d/.test(value)) {
+            return {type:type, error:true ,message:`${type} must have number`};
         }
 
-        return {type:'password', error:false ,message:''}
+        return {type:type, error:false ,message:''}
     }
 }

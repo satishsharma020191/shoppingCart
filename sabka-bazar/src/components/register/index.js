@@ -9,9 +9,12 @@ import Footer from '../footer';
 
 
 function Register(props) {
-    // console.log('register props email rules::',validator.emailRules());
-    const { cartProducts, plusProduct, minusProduct, handleSubmit, validateForm } = props;
+    const { cartProducts, plusProduct, minusProduct, handleSubmit, validateForm, formError } = props;
+    if(formError.error){
+        if(formError.type =='password'){
 
+        }
+    }
     
 
     return <div className="container"><Header cartProducts={cartProducts} plusProduct={plusProduct} minusProduct={minusProduct} />
@@ -44,10 +47,12 @@ function Register(props) {
 
                             <div className="row form-input">
                                 <input type="password" name="password" size="50" onChange={(e) => validateForm(e,'password')} placeholder="Password" required aria-required="true" />
+                                <p>{formError.error && formError.type=='password'? formError.message:''}</p>
                             </div>
 
                             <div className="row form-input">
-                                <input type="password" name="confirmpassword" size="50" placeholder="Confirm Password" required aria-required="true" />
+                                <input type="password" name="confirmPassword" size="50" onChange={(e) => validateForm(e,'confirmPassword')} placeholder="Confirm Password" required aria-required="true" />
+                                <p>{formError.error && formError.type=='confirmPassword'? formError.message:''}</p>
                             </div>
 
                             <div className="row form-input">

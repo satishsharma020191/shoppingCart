@@ -32,9 +32,13 @@ function RegisterContainer(props) {
 
     function validateForm(e, type){
         let value = e.target.value;
+        let validateResponse = '';
         console.log('printing value validateForm', value);
-        let passvalidate = validator.passwordRules(value);
-        console.log('password validate:::', passvalidate);
+        if(type=='password' || type=='confirmPassword'){
+            validateResponse = validator.passwordRules(value, type);
+        }
+        setFormError(validateResponse);
+        console.log('password validate:::', formError);
     }
     // function validateForm(e) {
     //     let password = e.target.value;
