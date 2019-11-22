@@ -10,13 +10,7 @@ import Footer from '../footer';
 
 function Register(props) {
     const { cartProducts, plusProduct, minusProduct, handleSubmit, validateForm, formError } = props;
-    if(formError.error){
-        if(formError.type =='password'){
-
-        }
-    }
     
-
     return <div className="container"><Header cartProducts={cartProducts} plusProduct={plusProduct} minusProduct={minusProduct} />
 
         <section className="section-form">
@@ -34,15 +28,18 @@ function Register(props) {
                                 <div>
                                     <label htmlFor="email">First Name</label>
                                 </div>
-                                <input type="text" className="email-input" name="firstname" size="50" placeholder="First Name" required aria-required="true" />
+                                <input type="text" name="firstName" size="50" onChange={(e) => validateForm(e,'firstName')} placeholder="First Name" required aria-required="true" />
+                                <p>{formError.error && formError.type=='firstName'? formError.message:''}</p>
                             </div>
 
                             <div className="row form-input">
-                                <input type="text" name="lastname" size="50" placeholder="Last Name" required aria-required="true" />
+                                <input type="text" name="lastName" size="50" onChange={(e) => validateForm(e,'lastName')} placeholder="Last Name" required aria-required="true" />
+                                <p>{formError.error && formError.type=='lastName'? formError.message:''}</p>
                             </div>
 
                             <div className="row form-input">
-                                <input type="email" name="email" size="50" placeholder="Email" required aria-required="true" />
+                                <input type="email" name="email" size="50" onChange={(e) => validateForm(e,'email')} placeholder="Email" required aria-required="true" />
+                                <p>{formError.error && formError.type=='email'? formError.message:''}</p>
                             </div>
 
                             <div className="row form-input">

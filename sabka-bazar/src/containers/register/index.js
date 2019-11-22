@@ -29,36 +29,11 @@ function RegisterContainer(props) {
         
     }
 
-
     function validateForm(e, type){
-        let value = e.target.value;
-        let validateResponse = '';
-        console.log('printing value validateForm', value);
-        if(type=='password' || type=='confirmPassword'){
-            validateResponse = validator.passwordRules(value, type);
-        }
-        setFormError(validateResponse);
-        console.log('password validate:::', formError);
+        let resp = validator.validateForm(e, type);
+        setFormError(resp);
     }
-    // function validateForm(e) {
-    //     let password = e.target.value;
-    //     // minimum 6 character
-    //     // must have number and alphabet
-    //     //cannot have space
-
-    //     if (password.length < 6) {
-    //         setFormError("must have 6 characters");
-    //         return;
-    //     }
-
-    //     if (!/\d/.test(password)) {
-    //         setFormError("must have number");
-    //         return;
-    //     }
-
-    //     setFormError("");
-
-    // }
+   
 
     return <Register cartProducts={cartProducts} plusProduct={plusProduct} minusProduct={minusProduct} handleSubmit={handleSubmit} validateForm={validateForm} formError={formError} />;
 }
