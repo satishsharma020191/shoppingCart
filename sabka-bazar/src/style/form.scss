@@ -27,9 +27,9 @@ input:hover, input:active {
 }
 
 .section-form {
-        padding-left: 20%;
-        padding-right: 20%;
-        margin: 0 auto;
+        padding-left: 10%;
+        padding-right: 10%;
+        text-align: center;
     }
 
 .form-input {
@@ -69,5 +69,11 @@ label {
 
         .form-data {
             width: 49.2%;
+        }
+
+        .section-form {
+            padding-left: 20%;
+            padding-right: 20%;
+            text-align: justify;
         }
 }        

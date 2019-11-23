@@ -1,17 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import Login from '../../components/login';
 import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
 import { requestAddProduct, requestMinusProduct } from "../plp/actions";
+import { validator } from '../../utils';
 
 function LoginContainer(props) {
   const { cartProducts } = props;
-
-  function handleSubmit(event) {
-    event.preventDefault();
-    // console.log('form data',data);
-    console.log('printing login form data', event.target.email.value);
-  }
+  const [formError, setFormError] = useState({});
 
   function plusProduct(product) {
     props.requestAddProduct(product);
@@ -20,7 +16,20 @@ function LoginContainer(props) {
   function minusProduct(product) {
     props.requestMinusProduct(product);
   }
-  return <Login cartProducts={cartProducts} plusProduct={plusProduct} minusProduct={minusProduct} handleSubmit={handleSubmit} />;
+
+  function handleSubmit(event) {
+    event.preventDefault();
+    props.history.push('/');
+  }
+
+  function validateForm(e, type) {
+    let val = e.target.value;
+    let resp = validator.validateForm(val, type);
+    setFormError(resp);
+  }
+
+
+  return <Login cartProducts={cartProducts} plusProduct={plusProduct} minusProduct={minusProduct} handleSubmit={handleSubmit} formError={formError} validateForm={validateForm} />;
 }
 
 const mapStateToProps = state => ({ cartProducts: state.plp.cartProducts });

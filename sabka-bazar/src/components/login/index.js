@@ -8,7 +8,7 @@ import Footer from '../footer';
 
 
 function Login(props) {
-    const { cartProducts, plusProduct, minusProduct, handleSubmit } = props;
+    const { cartProducts, plusProduct, minusProduct, handleSubmit, formError, validateForm } = props;
 
     return <div className="container">
         <Header cartProducts={cartProducts} plusProduct={plusProduct} minusProduct={minusProduct} />
@@ -26,13 +26,15 @@ function Login(props) {
                                 <div>
                                     <label htmlFor="email">Email</label>
                                 </div>
-                                <input type="email" className="email-input" name="email" size="50" placeholder="Email" required
+                                <input type="email" className="email-input" name="email" size="50" onChange={(e) => validateForm(e, 'email')} placeholder="Email" required
                                     aria-required="true" />
+                                <p>{formError.error && formError.type == 'email' ? formError.message : ''}</p>
                             </div>
 
                             <div className="row form-input">
-                                <input type="password" name="password" size="50" placeholder="Password" required
+                                <input type="password" name="password" size="50" onChange={(e) => validateForm(e, 'password')} placeholder="Password" required
                                     aria-required="true" />
+                                <p>{formError.error && formError.type == 'password' ? formError.message : ''}</p>
                             </div>
 
                             <div className="row form-input">
