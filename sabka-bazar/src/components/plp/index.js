@@ -18,7 +18,7 @@ function Plp(props) {
             <div className="row">
                 <div className="col span-2-of-10 sidebar">
                     <div className="topnavside">
-                        <Link className="iconDown" onClick={showMenu}>A</Link>
+                        <Link onClick={showMenu}><span className="selectedFilter">{cid.replace(/-/g, ' ').toUpperCase()}</span> <i className="iconDown">A</i></Link>
                         <ul className="myLinks" style={{ display: displayProp }}>
                             <li className={cid === 'fruit-and-veg' ? 'active' : ''}><Link to={'/plp/fruit-and-veg'}>Fruits & Vegitables</Link></li>
                             <li className={cid === 'bakery-cakes-dairy' ? 'active' : ''}><Link to={'/plp/bakery-cakes-dairy'}>Backery Cakes and Dairy</Link></li>
@@ -34,10 +34,16 @@ function Plp(props) {
                         {products && products.map((obj, i) => {
                             rows.push(<div key={obj.id} className="col span-1-of-4 item">
                                 <h3>{obj.name}</h3>
-                                <img src={obj.imageURL} />
-                                <p>{obj.description}</p>
-                                <div className="price-tag">
-                                    MRP Rs. {obj.price} <a href="#" onClick={() => buyNow(obj)}>Buy Now</a>
+                                <div className="item-content">
+                                    <div className="item-inner-content">
+                                        <img src={obj.imageURL} />
+                                    </div>
+                                    <div className="item-inner-content">
+                                        <p>{obj.description}</p>
+                                        <div className="price-tag">
+                                            MRP Rs. {obj.price} <a href="#" onClick={() => buyNow(obj)}>Buy Now</a>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>);
                         })}
