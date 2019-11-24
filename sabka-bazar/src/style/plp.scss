@@ -74,7 +74,7 @@
                         margin-top: 0px;
                         font-size: 12px;
                         text-align: justify;
-                        background-color:grey;
+                        background-color:#f1f1f1;
                     }
             
                     .price-tag a {
@@ -91,9 +91,25 @@
 
 }
 
+@media screen and (min-width: 480px){
+    .products {
+        width: 100%;
+        .item {
+            width: 50%;
+            border-bottom: none;
+            margin-left: 2px;
+            border-right: 3px solid #f1f1f1;
+            .item-content{
+                .price-tag {
+                    font-size: 10px;
+                }
+            }
+        }
+    }
+    
+}
 
 @media screen and (min-width: 768px){
-
     .section-plp{
         width: 80%;
         margin: 0 auto;
@@ -119,12 +135,18 @@
             width: 79.68%;
             .section-products{
                 .item{
+                    width: 25%;
                     border-bottom: none;
+                    border-right: 3px solid #f1f1f1;
                     .item-content{  
                         .item-inner-content{
                         float: none;
                         clear: none;
                         width: 100%;
+
+                        .price-tag {
+                            font-size: 14px;
+                        }
                         }
                     }
                 }
