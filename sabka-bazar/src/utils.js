@@ -31,7 +31,6 @@ export const validator = {
         return { type: type, error: false, message: '' }
     },
     validateForm: (val, type) => {
-        // let val = e.target.value;
         let validateResponse = '';
 
         validateResponse = validator.requiredRule(val, type);

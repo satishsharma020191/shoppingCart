@@ -1,14 +1,15 @@
 import React from "react";
+import Header from '../header';
+import Footer from '../footer';
 import "../../style/common/grid.scss";
 import "../../style/common/style.scss";
 import "../../style/plp.scss";
-import Header from '../header';
-import Footer from '../footer';
+
 import { Link } from 'react-router-dom';
 import { chunk } from 'lodash';
 
 function Plp(props) {
-    const { products, cid, cartProducts, buyNow, plusProduct, minusProduct } = props;
+    const { products, cid, cartProducts, buyNow, plusProduct, minusProduct, displayProp, showMenu } = props;
     let rows = [];
 
     return <div className="container"><Header cartProducts={cartProducts} plusProduct={plusProduct} minusProduct={minusProduct} />
@@ -16,13 +17,15 @@ function Plp(props) {
         <section className="section-plp">
             <div className="row">
                 <div className="col span-2-of-10 sidebar">
-                    <ul>
-                        <li className={cid === 'fruit-and-veg' ? 'active' : ''}><Link to={'/plp/fruit-and-veg'}>Fruits & Vegitables</Link></li>
-                        <li className={cid === 'bakery-cakes-dairy' ? 'active' : ''}><Link to={'/plp/bakery-cakes-dairy'}>Backery Cakes and Dairy</Link></li>
-                        <li className={cid === 'beverages' ? 'active' : ''}><Link to={'/plp/beverages'}>Beverages</Link></li>
-                        <li className={cid === 'beauty-hygiene' ? 'active' : ''}><Link to={'/plp/beauty-hygiene'}>Beauty and Hygiene</Link></li>
-                        <li className={cid === 'baby' ? 'active' : ''}><Link to={'/plp/baby'}>Baby Care</Link></li>
-                    </ul>
+                    <div className="topnavside">
+                        <Link className="iconDown" onClick={showMenu}>A</Link>
+                        <ul className="myLinks" style={{ display: displayProp }}>
+                            <li className={cid === 'fruit-and-veg' ? 'active' : ''}><Link to={'/plp/fruit-and-veg'}>Fruits & Vegitables</Link></li>
+                            <li className={cid === 'bakery-cakes-dairy' ? 'active' : ''}><Link to={'/plp/bakery-cakes-dairy'}>Backery Cakes and Dairy</Link></li>
+                            <li className={cid === 'beverages' ? 'active' : ''}><Link to={'/plp/beverages'}>Beverages</Link></li>
+                            <li className={cid === 'beauty-hygiene' ? 'active' : ''}><Link to={'/plp/beauty-hygiene'}>Beauty and Hygiene</Link></li>
+                            <li className={cid === 'baby' ? 'active' : ''}><Link to={'/plp/baby'}>Baby Care</Link></li>
+                        </ul></div>
                 </div>
 
 
@@ -52,7 +55,7 @@ function Plp(props) {
         </section>
 
         <Footer />
-    </div>;
+    </div >;
 }
 
 export default Plp;
