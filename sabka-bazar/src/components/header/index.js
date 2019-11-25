@@ -31,7 +31,7 @@ function Header(props) {
                 <div className="row">
                     <div className="col sm-7-of-10">
                         <Link to={'/'}><img src={'/static/images/logo.png'} alt="logo" /></Link>
-                        <ul id="myLinks" style={{ display: displayProp }}>
+                        <ul className="myLinks" style={{ display: displayProp }}>
                             <li><Link to={'/'}>Home</Link></li>
                             <li><Link to={'/plp/all'}>Products</Link></li>
                             <li><Link to={'/login'}>Sign In</Link></li>
