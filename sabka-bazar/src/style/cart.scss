@@ -9,6 +9,7 @@
         background-color:rgb(229, 226, 226);
 
         .lowest-price-gauranteed {
+           // position: relative;
     margin-top: 10px;
     width: 92%;
     margin-left:4%;
@@ -19,6 +20,7 @@
     display: inline-flex;
     
     .lowest-price-logo {
+       // position: relative;
         margin-left: 1px;
         width: 20%;
         float: left; 
@@ -28,6 +30,7 @@
         }
     }
     .cheaper-anywhere{
+        position: relative;
             margin-left: 5px;
             width: 80%;
             p{
@@ -85,9 +88,11 @@
         }
         .cart-body{
             height: 400px;
+            max-height: 400px;
+            overflow:auto;
     .cart-items{
-        overflow:auto;
-        max-height: 400px;
+        
+        
         .shopping-cart-item {
             background-color: rgb(255, 253, 253);
             box-sizing: border-box;
