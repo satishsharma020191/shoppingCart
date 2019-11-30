@@ -1,147 +1,166 @@
 .shopping-cart {
-    width: 450px;
+   max-width: 100%;
+   max-height: 80%;
     float: right;
     background-color: white;
     border-radius: 3px;
-    padding: 2px;
-    z-index: 1;
-}
 
-.shopping-cart-header {
-    padding-bottom: 15px;
-    background-color: rgb(56, 55, 55);
-    color: white;
-}
+    .shopping-cart-contents {
+        background-color:rgb(229, 226, 226);
 
-.shopping-cart-header p{
-    padding-left: 0px;
-    padding-top: 0px;
-    height: 5px;
-}
-
-.apple-logo img {
-    height: 70px;
-    width: auto;
-    float: left;
-}
-
-.shopping-cart-items {
-    background-color: rgb(255, 253, 253);
-    box-sizing: border-box;
-    margin-top: 10px;
-}
-
-.shopping-cart-items .apple-logo {
-    margin-left: 2px;
-    margin-top: 2px;
-    /* padding-top: 20px; */
-    
-}
-
-.shopping-cart-items p {
-    margin-left: 100px;
-    
-}
-
-.shopping-cart-items i {
-    margin-left: 1px;
-}
-
-.shopping-cart-header .icon-close {
-    font-size: 35px;
-    float: right;
-    margin-top: -32px;
-    padding-right: 15px;
-    color: rgb(229, 226, 226);
-}
-
-
-.shopping-cart-contents {
-    background-color:rgb(229, 226, 226);
-    margin-bottom: 40px;
-}
-
-.shopping-cart-items .icon-close {
-    font-size: 25px;
-}
-
-.shopping-cart-items .icon-minus {
-    margin-left: 25px;
-}
-
-.shopping-cart-items .minus-1 {
-
-    margin-left: 15px;
- 
-}
-
-.shopping-cart-items .plus-icon {
-    margin-left: 15px;
- 
-}
-
-.shopping-cart-items .icon-close {
-    font-size: 40px;
-    margin-left: 10px;
- 
-}
-
-.shopping-cart-items .product-price {
-    margin-left: 10px;
-}
-
-.shopping-cart-items .total-product-price {
-    float: right;
-    padding-top: 20px;
-}
-
-.lowest-price-gauranteed img {
-    height: 40px;
-    padding-top: 5px;
-}
-
-.shopping-cart .lowest-price-gauranteed {
+        .lowest-price-gauranteed {
     margin-top: 10px;
     background-color:  rgb(255, 253, 253);
     border: 2px solid white;
     border-radius: 2px;
-    box-sizing: border-box;
-    height: 70px;
-    padding-top: 20px;
-    margin-bottom: 400px;
+    overflow: hidden;
+    display: inline-flex;
+    // margin-bottom: 400px;
+    margin-left: 5%;
+    margin-right: 5%;
+    .lowest-price-logo {
+        margin-left: 1px;
+        width: 20%;
+        float: left; 
+        img {
+            margin-top: 14%;
+            width: 100%;
+        }
+    }
+    .cheaper-anywhere{
+            margin-left: 5px;
+            width: 80%;
+            p{
+                font-size: 14px;
+            }
+    }
+           
+    }
+    .footer-checkout-bottom {
+        background-color: white;
+        box-sizing: border-box;
+        .footer-checkout {
+            background-color: rgb(214, 68, 92);
+            color: white;
+            padding: 10px;
+            margin: 0 10px 10px 10px;
+            border-radius: 3px;
+            .checkout-price{
+                float:right;
+            }
+        
+        }
+        .footer-bottom {
+            p{
+            padding-top:14px;
+            text-align: center;
+            font-size: 14px;
+        }
+    }
+    }
+
+        .shopping-cart-header {
+            padding-bottom:5px;
+            background-color: rgb(56, 55, 55);
+            color: white;
+            overflow: hidden;
+            p {
+                margin-left: 5%;
+                font-weight: bold;
+            }
+
+            .icon-close {
+                font-size: 35px;
+                float: right;
+                margin-top: -32px;
+                padding-right: 15px;
+                color: rgb(229, 226, 226);
+            }
+
+            p{
+                padding-left: 0px;
+                padding-top: 0px;
+                height: 5px;
+            }
+        }
+        .cart-body{
+            height: 400px;
+    .cart-items{
+        overflow:auto;
+        max-height: 400px;
+        .shopping-cart-item {
+            background-color: rgb(255, 253, 253);
+            box-sizing: border-box;
+            padding: 5px;
+            margin-top: 10px;
+
+            .apple-logo {
+                margin-left: 2px;
+                margin-top: 2px;
+                img {
+                height: 70px;
+                width: auto;
+                float: left;
+            }
+        }
+
+        p{
+            //margin-left: 100px;
+            font-size: 16px;
+        }
+        i {
+            margin-left: 1px;
+        }
+
+        .icon-close {
+            // font-size: 25px;
+        }
+
+        .icon-minus {
+            // margin-left: 25px;
+        }
+
+        .minus-1 {
+            margin-left: 10px;
+        }
+
+        .plus-icon {
+            margin-left: 10px;
+         
+        }
+
+        .total-product-price {
+            float: right;
+            // padding-top: 20px;
+        }
+
+        .icon-plus {
+            margin-left: 10px;
+         
+        }
+
+        .icon-close {
+            // font-size: 40px;
+            margin-left: 10px;
+         
+        }
+
+        .product-price {
+            margin-left: 10px;
+        }
+
+        }
+    }
+}
+    }
+}
+
+
+@media screen and (min-width: 480px){
+    .shopping-cart{
+        width: 40%;
+    }
     
-    margin-left: 20px;
-    margin-right: 20px;
-}
-
-.lowest-price-gauranteed .lowest-price-logo {
-    margin-left: 2px;
-    margin-top: 2px;
-    float: left; 
-    margin-top: 1px;
-    /* padding-top: 20px; */
 }
 
 
-.footer-checkout {
-    /* margin-bottom: 320px; */
-    background-color: rgb(214, 68, 92);
-    color: white;
-    padding: 10px 0 20px 0;
-    margin-left: 20px;
-    margin-right: 20px;
-
-}
-
-.footer-checkout-bottom {
-    background-color: white;
-    box-sizing: border-box;
-}
-
-.footer-bottom p{
-    text-align: center;
-}
-
-.footer-checkout .checkout-text-1{
-   float: right;
-}
