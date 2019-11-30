@@ -92,15 +92,15 @@
   footer {
         width: 100%;
         background-color: grey;
-        position: relative;
+        position: fixed;
         bottom: 0;
-        z-index: -1;
+        //z-index: -1;
         left: 0;
     }
     
     footer p {
-        padding: 20px;
-        margin-left: 19%; 
+        padding: 5px;
+        text-align: center;
     }
 
 
