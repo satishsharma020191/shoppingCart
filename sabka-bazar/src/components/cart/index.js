@@ -37,26 +37,38 @@ function Cart(props) {
                         )
                     })}
                 </div>
-                <div className="lowest-price-gauranteed">
-                    <div className="lowest-price-logo">
-                        <img src={`/static/images/lowest-price.png`} alt="lowest-price" />
-                    </div>
-                    <div className="cheaper-anywhere"><p>You won't find it cheaper anywhwere</p></div>
-                </div>
+
+                {cartProducts && cartProducts.length ?
+                    <div className="lowest-price-gauranteed">
+                        <div className="lowest-price-logo">
+                            <img src={`/static/images/lowest-price.png`} alt="lowest-price" />
+                        </div>
+                        <div className="cheaper-anywhere"><p>You won't find it cheaper anywhwere</p></div>
+                    </div> : <div className="lowest-price-gauranteed-blank">
+                        <h2>No items in your cart</h2>
+                        <p>Your favourite items are just a click away</p>
+                    </div>}
+
+
             </div>
 
-            <div className="footer-checkout-bottom">
-                <div className="footer-bottom">
-                    <p>Promo code can be applied on payment page</p>
-                </div>
-                <div className="footer-checkout" onClick={props.handleClose}>
-                    <span className="checkout-text">Proceed to Checkout</span>
-                    <div className="checkout-price">
-                        <span>Rs. {totalCheckoutPrice} </span>
-                        <i className="ion-ios-arrow-forward icon-forward"></i>
+
+
+            {cartProducts && cartProducts.length ?
+                (<div className="footer-checkout-bottom">
+                    <div className="footer-bottom">
+                        <p>Promo code can be applied on payment page</p>
                     </div>
-                </div>
-            </div>
+                    <div className="footer-checkout" onClick={props.handleClose}>
+                        <span className="checkout-text">Proceed to Checkout</span>
+                        <div className="checkout-price">
+                            <span>Rs. {totalCheckoutPrice} </span>
+                            <i className="ion-ios-arrow-forward icon-forward"></i>
+                        </div>
+                    </div></div>) : (<div className="footer-checkout-bottom">
+                        <div className="footer-checkout checkout-start-shop" onClick={props.handleClose}>
+                            <span>Start Shopping</span>
+                        </div></div>)}
         </div>
     </div>;
 }
