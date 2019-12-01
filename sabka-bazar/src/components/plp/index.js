@@ -18,7 +18,7 @@ function Plp(props) {
             <div className="row">
                 <div className="col span-2-of-10 sidebar">
                     <div className="topnavside">
-                        <Link onClick={showMenu}><span className="selectedFilter">{cid.replace(/-/g, ' ').toUpperCase()}</span> <i className="iconDown">A</i></Link>
+                        <Link onClick={showMenu}><span className="selectedFilter">{cid.replace(/-/g, ' ').toUpperCase()}</span><i className="ion-ios-arrow-down iconDown"></i></Link>
                         <ul className="myLinks" style={{ display: displayProp }}>
                             <li className={cid === 'fruit-and-veg' ? 'active' : ''}><Link to={'/plp/fruit-and-veg'}>Fruits & Vegitables</Link></li>
                             <li className={cid === 'bakery-cakes-dairy' ? 'active' : ''}><Link to={'/plp/bakery-cakes-dairy'}>Backery Cakes and Dairy</Link></li>
