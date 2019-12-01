@@ -1,10 +1,6 @@
 import React from "react";
-import Header from '../header';
-import Footer from '../footer';
-import "../../style/common/grid.scss";
-import "../../style/common/style.scss";
+import Layout from '../layout';
 import "../../style/plp.scss";
-
 import { Link } from 'react-router-dom';
 import { chunk } from 'lodash';
 
@@ -12,8 +8,7 @@ function Plp(props) {
     const { products, cid, cartProducts, buyNow, plusProduct, minusProduct, displayProp, showMenu } = props;
     let rows = [];
 
-    return <div className="container"><Header cartProducts={cartProducts} plusProduct={plusProduct} minusProduct={minusProduct} />
-
+    return <Layout cartProducts={cartProducts} plusProduct={plusProduct} minusProduct={minusProduct}>
         <section className="section-plp">
             <div className="row">
                 <div className="col span-2-of-10 sidebar">
@@ -36,16 +31,17 @@ function Plp(props) {
                                 <h3>{obj.name}</h3>
                                 <div className="item-content">
                                     <div className="item-inner-content">
-                                        <img src={obj.imageURL} />
+                                        <img src={obj.imageURL} alt={obj.name} />
                                     </div>
                                     <div className="item-inner-content">
                                         <p>{obj.description}</p>
                                         <div className="price-tag">
-                                            MRP Rs. {obj.price} <a href="#" onClick={() => buyNow(obj)}>Buy Now</a>
+                                            MRP Rs. {obj.price} <button onClick={() => buyNow(obj)} aria-label={obj.name}>Buy Now</button>
                                         </div>
                                     </div>
                                 </div>
                             </div>);
+                            return null;
                         })}
 
                         {(chunk(rows, 4).map(function (group, i) {
@@ -60,8 +56,7 @@ function Plp(props) {
             </div>
         </section>
 
-        <Footer />
-    </div >;
+    </Layout>;
 }
 
 export default Plp;

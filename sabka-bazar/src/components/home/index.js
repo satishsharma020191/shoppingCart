@@ -1,9 +1,6 @@
 import React from "react";
-import "../../style/common/grid.scss";
-import "../../style/common/style.scss";
 import "../../style/home.scss";
-import Header from '../header';
-import Footer from '../footer';
+import Layout from '../layout';
 import { Link } from 'react-router-dom';
 import { CarouselProvider, Slider, Dot, Slide, ButtonBack, ButtonNext } from 'pure-react-carousel';
 import 'pure-react-carousel/dist/react-carousel.es.css';
@@ -11,7 +8,7 @@ import 'pure-react-carousel/dist/react-carousel.es.css';
 function Home(props) {
     const { banners, categories, cartProducts, plusProduct, minusProduct } = props;
 
-    return <div className="container"><Header cartProducts={cartProducts} plusProduct={plusProduct} minusProduct={minusProduct} />
+    return <Layout cartProducts={cartProducts} plusProduct={plusProduct} minusProduct={minusProduct}>
         <section>
             <div className="row home-tile clearfix">
 
@@ -79,8 +76,7 @@ function Home(props) {
 
         </section>
 
-        <Footer />
-    </div>;
+    </Layout>;
 }
 
 export default Home;

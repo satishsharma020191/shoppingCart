@@ -36,11 +36,11 @@ export const validator = {
         validateResponse = validator.requiredRule(val, type);
         if (validateResponse.error) return validateResponse;
 
-        if (type == 'password' || type == 'confirmPassword') {
+        if (type === 'password' || type === 'confirmPassword') {
             validateResponse = validator.passwordRules(val, type);
         }
 
-        if (type == 'email') {
+        if (type === 'email') {
             validateResponse = validator.emailRules(val, type);
         }
 

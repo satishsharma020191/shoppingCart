@@ -5,7 +5,6 @@ import { createStore, applyMiddleware, compose } from 'redux';
 import { Provider } from 'react-redux';
 import reducer from './reducers';
 import { Route, BrowserRouter as Router } from 'react-router-dom'
-import './index.css';
 import Home from './containers/home';
 import Plp from './containers/plp';
 import Login from './containers/login';

@@ -1,5 +1,6 @@
 
 .section-plp{
+    margin-bottom: 50px;
     .sidebar {
         background-color: #a6a6a6;
         width: 100%;
@@ -76,14 +77,18 @@
                         background-color:#a6a6a6;
                     }
             
-                    .price-tag a {
+                    .price-tag 
+                    {
+                        button {
                         background-color: rgb(238, 92, 116);
                         color: #fff;
                         text-decoration: none;
-                        padding: 5px;
+                        padding: 2px;
                         margin-left: 2px;
                         bottom: 0;
+                        float: right;
                     }
+                }
                     }
             }
     }
@@ -137,6 +142,7 @@
                     width: 25%;
                     border-bottom: none;
                     border-right: 3px solid #f1f1f1;
+                    border-bottom: 2px dotted #f1f1f1;
                     .item-content{  
                         .item-inner-content{
                         float: none;

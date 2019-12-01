@@ -1,17 +1,11 @@
 import React from "react";
-import "../../style/common/grid.scss";
-import "../../style/common/style.scss";
-import "../../style/form.scss";
-import Header from '../header';
-import Footer from '../footer';
-
+import Layout from '../layout';
 
 
 function Login(props) {
     const { cartProducts, plusProduct, minusProduct, handleSubmit, formError, validateForm } = props;
 
-    return <div className="container">
-        <Header cartProducts={cartProducts} plusProduct={plusProduct} minusProduct={minusProduct} />
+    return <Layout cartProducts={cartProducts} plusProduct={plusProduct} minusProduct={minusProduct}>
         <section className="section-form">
             <div className="row">
                 <form method="post" onSubmit={(e) => handleSubmit(e)}>
@@ -28,13 +22,13 @@ function Login(props) {
                                 </div>
                                 <input type="email" className="email-input" name="email" size="50" onChange={(e) => validateForm(e, 'email')} placeholder="Email" required
                                     aria-required="true" />
-                                <p>{formError.error && formError.type == 'email' ? formError.message : ''}</p>
+                                <p>{formError.error && formError.type === 'email' ? formError.message : ''}</p>
                             </div>
 
                             <div className="row form-input">
                                 <input type="password" name="password" size="50" onChange={(e) => validateForm(e, 'password')} placeholder="Password" required
                                     aria-required="true" />
-                                <p>{formError.error && formError.type == 'password' ? formError.message : ''}</p>
+                                <p>{formError.error && formError.type === 'password' ? formError.message : ''}</p>
                             </div>
 
                             <div className="row form-input">
@@ -48,10 +42,7 @@ function Login(props) {
             </div>
 
         </section>
-
-        <Footer />
-
-    </div>;
+    </Layout>;
 }
 
 export default Login;

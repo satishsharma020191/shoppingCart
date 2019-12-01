@@ -41,7 +41,7 @@ function Header(props) {
 
                     <div className="col sm-3-of-10">
                         <div className="col sm-2-of-3">
-                            <i onClick={showModal} className="btn-cart">  <img src={'/static/images/cart.svg'} /><span>({cartProducts ? cartProducts.length : 0})</span></i>
+                            <i onClick={showModal} className="btn-cart">  <img src={'/static/images/cart.svg'} alt="cart logo" /><span>({cartProducts ? cartProducts.length : 0})</span></i>
                         </div>
                         <div className="col sm-1-of-3 btn-cart">
                             <i onClick={() => showMenu()} className="ion-ios-arrow-down"></i>
@@ -71,7 +71,7 @@ function Header(props) {
                         </ul>
                     </nav>
                     <div className="row">
-                        <a href="#" className="btn-cart" aria-label="cart button" onClick={showModal}><img src={'/static/images/cart.svg'} /><span>{cartProducts ? cartProducts.length : 0} items</span></a>
+                        <button className="btn-cart" aria-label="cart button" onClick={showModal}><img src={'/static/images/cart.svg'} alt='cart icon' /><span>{cartProducts ? cartProducts.length : 0} items</span></button>
                     </div>
 
                 </div>

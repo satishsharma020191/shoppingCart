@@ -29,9 +29,10 @@ export default (state = {}, action) => {
             }
 
             minusCartProducts.map((obj, i) => {
-                if (obj.id == action.payload.id) {
+                if (obj.id === action.payload.id) {
                     indexToRemove = i;
                 }
+                return null;
             });
 
             delete minusCartProducts[indexToRemove];
