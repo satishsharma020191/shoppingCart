@@ -21,14 +21,14 @@ function Login(props) {
                                     <label htmlFor="email">Email</label>
                                 </div>
                                 <input type="email" className="email-input" name="email" size="50" onChange={(e) => validateForm(e, 'email')} placeholder="Email" required
-                                    aria-required="true" />
-                                <p>{formError.error && formError.type === 'email' ? formError.message : ''}</p>
+                                    aria-required="true" aria-describedby="email-error" />
+                                <p id="email-error">{formError.error && formError.type === 'email' ? formError.message : ''}</p>
                             </div>
 
                             <div className="row form-input">
                                 <input type="password" name="password" size="50" onChange={(e) => validateForm(e, 'password')} placeholder="Password" required
-                                    aria-required="true" />
-                                <p>{formError.error && formError.type === 'password' ? formError.message : ''}</p>
+                                    aria-required="true" aria-describedby="password-error" />
+                                <p id="password-error">{formError.error && formError.type === 'password' ? formError.message : ''}</p>
                             </div>
 
                             <div className="row form-input">

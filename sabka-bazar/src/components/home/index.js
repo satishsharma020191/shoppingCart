@@ -2,44 +2,18 @@ import React from "react";
 import "../../style/home.scss";
 import Layout from '../layout';
 import { Link } from 'react-router-dom';
-import { CarouselProvider, Slider, Dot, Slide, ButtonBack, ButtonNext } from 'pure-react-carousel';
-import 'pure-react-carousel/dist/react-carousel.es.css';
-
+import Carousel from '../carousel';
 function Home(props) {
     const { banners, categories, cartProducts, plusProduct, minusProduct } = props;
 
     return <Layout cartProducts={cartProducts} plusProduct={plusProduct} minusProduct={minusProduct}>
         <section>
             <div className="row home-tile clearfix">
-
-                <CarouselProvider naturalSlideWidth={100} naturalSlideHeight={30} isPlaying={true} totalSlides={banners && banners.length} >
-                    <div className="slide-container">
-                        <div className="slideshow-container">
-                            <Slider>
-                                {banners && banners.map((obj, i) => {
-                                    return (
-                                        <Slide key={obj.id} index={i} className="mySlides"><img src={obj.bannerImageUrl} alt={obj.bannerImageAlt} /></Slide>
-                                    )
-                                })}
-                            </Slider>
-
-                            <div className="slides-dot">
-                                {banners && banners.map((obj, i) => (
-                                    <Dot key={obj.id} slide={i} className="dot" />
-                                ))}
-                            </div>
-
-                            <ButtonBack className="prev">Back</ButtonBack>
-                            <ButtonNext className="next">Next</ButtonNext>
-                        </div>
-                    </div>
-                </CarouselProvider>
+                <Carousel banners={banners} />
             </div>
         </section>
 
-
-        <section>
-
+        <section className="categories">
             {categories && categories.map((obj, i) => {
                 return [
                     i % 2 === 0 ?

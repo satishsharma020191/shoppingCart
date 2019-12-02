@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "../../style/common/ionicons.scss";
+//import "../../style/common/ionicons.scss";
 import { Link } from "react-router-dom";
 import Modal from "../model";
 

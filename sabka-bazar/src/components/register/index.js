@@ -25,28 +25,28 @@ function Register(props) {
                                 <div>
                                     <label htmlFor="email">First Name</label>
                                 </div>
-                                <input type="text" name="firstName" size="50" onChange={(e) => validateForm(e, 'firstName')} placeholder="First Name" required aria-required="true" />
-                                <p>{formError.error && formError.type === 'firstName' ? formError.message : ''}</p>
+                                <input type="text" name="firstName" size="50" onChange={(e) => validateForm(e, 'firstName')} placeholder="First Name" required aria-required="true" aria-describedby="firstName-error" />
+                                <p id="firstName-error">{formError.error && formError.type === 'firstName' ? formError.message : ''}</p>
                             </div>
 
                             <div className="row form-input">
-                                <input type="text" name="lastName" size="50" onChange={(e) => validateForm(e, 'lastName')} placeholder="Last Name" required aria-required="true" />
-                                <p>{formError.error && formError.type === 'lastName' ? formError.message : ''}</p>
+                                <input type="text" name="lastName" size="50" onChange={(e) => validateForm(e, 'lastName')} placeholder="Last Name" required aria-required="true" aria-describedby="lastName-error" />
+                                <p id="lastName-error">{formError.error && formError.type === 'lastName' ? formError.message : ''}</p>
                             </div>
 
                             <div className="row form-input">
-                                <input type="email" name="email" size="50" onChange={(e) => validateForm(e, 'email')} placeholder="Email" required aria-required="true" />
-                                <p>{formError.error && formError.type === 'email' ? formError.message : ''}</p>
+                                <input type="email" name="email" size="50" onChange={(e) => validateForm(e, 'email')} placeholder="Email" required aria-required="true" aria-describedby="email-error" />
+                                <p id="email-error">{formError.error && formError.type === 'email' ? formError.message : ''}</p>
                             </div>
 
                             <div className="row form-input">
-                                <input type="password" name="password" size="50" onChange={(e) => validateForm(e, 'password')} placeholder="Password" required aria-required="true" />
-                                <p>{formError.error && formError.type === 'password' ? formError.message : ''}</p>
+                                <input type="password" name="password" size="50" onChange={(e) => validateForm(e, 'password')} placeholder="Password" required aria-required="true" aria-describedby="error-password" />
+                                <p id="error-password">{formError.error && formError.type === 'password' ? formError.message : ''}</p>
                             </div>
 
                             <div className="row form-input">
-                                <input type="password" name="confirmPassword" size="50" onChange={(e) => validateForm(e, 'confirmPassword')} placeholder="Confirm Password" required aria-required="true" />
-                                <p>{formError.error && formError.type === 'confirmPassword' ? formError.message : ''}</p>
+                                <input type="password" name="confirmPassword" size="50" onChange={(e) => validateForm(e, 'confirmPassword')} placeholder="Confirm Password" required aria-required="true" aria-describedby="error-confirmPassword" />
+                                <p id="error-confirmPassword">{formError.error && formError.type === 'confirmPassword' ? formError.message : ''}</p>
                             </div>
 
                             <div className="row form-input">
