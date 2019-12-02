@@ -6,7 +6,7 @@ function Login(props) {
     const { cartProducts, plusProduct, minusProduct, handleSubmit, formError, validateForm } = props;
 
     return <Layout cartProducts={cartProducts} plusProduct={plusProduct} minusProduct={minusProduct}>
-        <section className="section-form">
+        <section className="section-form" id="main">
             <div className="row">
                 <form method="post" onSubmit={(e) => handleSubmit(e)}>
 

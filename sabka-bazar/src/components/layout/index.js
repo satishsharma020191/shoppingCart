@@ -8,6 +8,7 @@ import Footer from '../footer';
 function Layout(props) {
     const { cartProducts, plusProduct, minusProduct } = props;
     return (<>
+        <a class="skip-main" href="#main">Skip to main content</a>
         <Header cartProducts={cartProducts} plusProduct={plusProduct} minusProduct={minusProduct} />
         {props.children}
         <Footer /></>);

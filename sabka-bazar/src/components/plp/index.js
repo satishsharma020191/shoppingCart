@@ -9,10 +9,10 @@ function Plp(props) {
     let rows = [];
 
     return <Layout cartProducts={cartProducts} plusProduct={plusProduct} minusProduct={minusProduct}>
-        <section className="section-plp">
+        <section className="section-plp" id="main">
             <div className="row">
                 <div className="col span-2-of-10 sidebar">
-                    <div className="topnavside">
+                    <nav className="topnavside">
                         <Link onClick={showMenu}><span className="selectedFilter">{cid.replace(/-/g, ' ').toUpperCase()}</span><i className="ion-ios-arrow-down iconDown"></i></Link>
                         <ul className="myLinks" style={{ display: displayProp }}>
                             <li className={cid === 'fruit-and-veg' ? 'active' : ''}><Link to={'/plp/fruit-and-veg'}>Fruits & Vegitables</Link></li>
@@ -20,7 +20,7 @@ function Plp(props) {
                             <li className={cid === 'beverages' ? 'active' : ''}><Link to={'/plp/beverages'}>Beverages</Link></li>
                             <li className={cid === 'beauty-hygiene' ? 'active' : ''}><Link to={'/plp/beauty-hygiene'}>Beauty and Hygiene</Link></li>
                             <li className={cid === 'baby' ? 'active' : ''}><Link to={'/plp/baby'}>Baby Care</Link></li>
-                        </ul></div>
+                        </ul></nav>
                 </div>
 
 

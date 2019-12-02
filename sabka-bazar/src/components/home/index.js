@@ -7,7 +7,7 @@ function Home(props) {
     const { banners, categories, cartProducts, plusProduct, minusProduct } = props;
 
     return <Layout cartProducts={cartProducts} plusProduct={plusProduct} minusProduct={minusProduct}>
-        <section>
+        <section id="main">
             <div className="row home-tile clearfix">
                 <Carousel banners={banners} />
             </div>

@@ -10,7 +10,7 @@ function Register(props) {
 
     return <Layout cartProducts={cartProducts} plusProduct={plusProduct} minusProduct={minusProduct}>
 
-        <section className="section-form">
+        <section className="section-form" id="main">
 
             <div className="row">
                 <form method="post" className="contact-form" onSubmit={(e) => handleSubmit(e)}>
