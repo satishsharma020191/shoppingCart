@@ -71,7 +71,7 @@ function Header(props) {
                         </ul>
                     </nav>
                     <div className="row">
-                        <button className="btn-cart" aria-label="cart" onClick={showModal}><img src={'/static/images/cart.svg'} alt='cart icon' /><span>{cartProducts ? cartProducts.length : 0} items</span></button>
+                        <button className="btn-cart" aria-label="cart" onClick={showModal}><img src={'/static/images/cart.svg'} alt='cart icon' /><span>{cartProducts ? cartProducts.length : 0} {cartProducts && cartProducts.length > 1 ? 'items' : 'item'}</span></button>
                     </div>
 
                 </div>
