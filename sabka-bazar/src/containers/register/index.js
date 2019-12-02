@@ -20,7 +20,7 @@ function RegisterContainer(props) {
     function handleSubmit(event) {
         event.preventDefault();
         if (event.target.password.value !== event.target.confirmPassword.value) {
-            setFormError({ type: 'confirmPassword', error: true, message: 'password and confirm password didnt match' });
+            setFormError({ type: 'mismatchPassword', error: true, message: 'password and confirm password didnt match' });
             return;
         }
         props.history.push('/');

@@ -57,21 +57,21 @@ function Header(props) {
                 <div className="col span-2-of-12 sabka-bazar-logo">
                     <Link to={'/'}><img src={'/static/images/logo.png'} alt="logo" /></Link>
                 </div>
-                <nav role="navigation" aria-label="header navigation" className="col span-6-of-12 navigate navigation-main">
+                <nav aria-label="header" className="col span-6-of-12 navigate navigation-main">
                     <ul>
                         <li><Link to={'/'}>Home</Link></li>
                         <li><Link to={'/plp/all'}>Products</Link></li>
                     </ul>
                 </nav>
                 <div className="col span-2-of-12 navigate">
-                    <nav role="navigation" aria-label="login navigation" className="row">
+                    <nav aria-label="login" className="row">
                         <ul>
                             <li><Link to={'/login'}>Sign in</Link></li>
                             <li><Link to={'/register'}>Register</Link></li>
                         </ul>
                     </nav>
                     <div className="row">
-                        <button className="btn-cart" aria-label="cart button" onClick={showModal}><img src={'/static/images/cart.svg'} alt='cart icon' /><span>{cartProducts ? cartProducts.length : 0} items</span></button>
+                        <button className="btn-cart" aria-label="cart" onClick={showModal}><img src={'/static/images/cart.svg'} alt='cart icon' /><span>{cartProducts ? cartProducts.length : 0} items</span></button>
                     </div>
 
                 </div>

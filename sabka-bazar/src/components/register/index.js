@@ -50,7 +50,8 @@ function Register(props) {
                             </div>
 
                             <div className="row form-input">
-                                <button type="submit" className="btn-login">Signup</button>
+                                <button type="submit" className="btn-login" aria-describedby="error-mismatchPassword">Signup</button>
+                                <p id="error-mismatchPassword">{formError.error && formError.type === 'mismatchPassword' ? formError.message : ''}</p>
                             </div>
                         </div>
                     </div>
