@@ -13,7 +13,7 @@ function HomeContainer(props) {
     useEffect(() => {
         props.requestBannerData();
         props.requestCategoriesData();
-    });
+    }, []);
 
     function plusProduct(product) {
         props.requestAddProduct(product);
