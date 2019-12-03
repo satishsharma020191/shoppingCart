@@ -11,11 +11,11 @@ function Cart(props) {
         groupedProducts = groupBy(cartProducts, 'id');
     }
 
-    return <div className="shopping-cart">
+    return <div className="shopping-cart" tabindex="0" role="dialog" aria-labelledby="dialogTitle" aria-describedby="dialogDesc">
         <div className="shopping-cart-contents">
             <div className="shopping-cart-header">
-                <p>My Cart({cartProducts ? cartProducts.length : 0} item)</p>
-                <i className="ion-ios-close-empty icon-close" onClick={props.handleClose}></i>
+                <h2 id="dialogTitle">My Cart({cartProducts ? cartProducts.length : 0} item)</h2>
+                <i role="button" aria-pressed="true" className="ion-ios-close-empty icon-close" onClick={props.handleClose}></i>
             </div>
             <div className="cart-body">
                 <div className="cart-items">
@@ -44,7 +44,7 @@ function Cart(props) {
                             <img src={`/static/images/lowest-price.png`} alt="lowest-price" />
                         </div>
                         <div className="cheaper-anywhere"><p>You won't find it cheaper anywhwere</p></div>
-                    </div> : <div className="lowest-price-gauranteed-blank">
+                    </div> : <div id="dialogDesc" className="lowest-price-gauranteed-blank">
                         <h2>No items in your cart</h2>
                         <p>Your favourite items are just a click away</p>
                     </div>}
@@ -59,18 +59,18 @@ function Cart(props) {
                     <div className="footer-bottom">
                         <p>Promo code can be applied on payment page</p>
                     </div>
-                    <div className="footer-checkout" onClick={props.handleClose}>
+                    <button className="footer-checkout" onClick={props.handleClose}>
                         <span className="checkout-text">Proceed to Checkout</span>
                         <div className="checkout-price">
                             <span>Rs. {totalCheckoutPrice} </span>
                             <i className="ion-ios-arrow-forward icon-forward"></i>
                         </div>
-                    </div></div>) : (<div className="footer-checkout-bottom">
-                        <div className="footer-checkout checkout-start-shop" onClick={props.handleClose}>
-                            <span>Start Shopping</span>
-                        </div></div>)}
+                    </button></div>) : (<div className="footer-checkout-bottom">
+
+                        <button className="footer-checkout" onClick={props.handleClose}>Start Shopping</button>
+                    </div>)}
         </div>
-    </div>;
+    </div >;
 }
 
 export default Cart;

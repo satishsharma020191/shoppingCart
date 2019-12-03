@@ -7,10 +7,8 @@ function Model(props) {
 
   const showHideClassName = show ? "modal display-block" : "modal display-none";
 
-  return <div className={showHideClassName}>
-    <section className="modal-main">
-      <Cart handleClose={handleClose} cartProducts={cartProducts} plusProduct={plusProduct} minusProduct={minusProduct} />
-    </section>
+  return <div className={`modal-main ${showHideClassName}`}>
+    <Cart handleClose={handleClose} cartProducts={cartProducts} plusProduct={plusProduct} minusProduct={minusProduct} />
   </div>;
 }
 
