@@ -1,9 +1,33 @@
-import React from "react";
+import React, { useState } from "react";
 import Layout from '../layout';
+import "../../style/common/form.scss";
+import { validator } from '../../utils';
 
 
 function Login(props) {
-    const { cartProducts, plusProduct, minusProduct, handleSubmit, formError, validateForm } = props;
+    const { cartProducts } = props;
+
+    const [formError, setFormError] = useState({});
+
+    function plusProduct(product) {
+        props.requestAddProduct(product);
+    }
+
+    function minusProduct(product) {
+        props.requestMinusProduct(product);
+    }
+
+    function handleSubmit(event) {
+        event.preventDefault();
+        props.history.push('/');
+    }
+
+    function validateForm(e, type) {
+        let val = e.target.value;
+        let resp = validator.validateForm(val, type);
+        setFormError(resp);
+    }
+
 
     return <Layout cartProducts={cartProducts} plusProduct={plusProduct} minusProduct={minusProduct}>
         <section className="section-form" id="main">

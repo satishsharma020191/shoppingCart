@@ -1,10 +1,23 @@
-import React from "react";
-import "../../style/home.scss";
+import React, { useEffect } from "react";
+import "./home.scss";
 import Layout from '../layout';
 import { Link } from 'react-router-dom';
 import Carousel from '../carousel';
 function Home(props) {
-    const { banners, categories, cartProducts, plusProduct, minusProduct } = props;
+    const { banners, categories, cartProducts } = props;
+
+    useEffect(() => {
+        props.requestBannerData();
+        props.requestCategoriesData();
+    }, []);
+
+    function plusProduct(product) {
+        props.requestAddProduct(product);
+    }
+
+    function minusProduct(product) {
+        props.requestMinusProduct(product);
+    }
 
     return <Layout cartProducts={cartProducts} plusProduct={plusProduct} minusProduct={minusProduct}>
         <section id="main">

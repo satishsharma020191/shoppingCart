@@ -1,12 +1,37 @@
-import React from "react";
-import "../../style/form.scss";
+import React, { useState } from "react";
+import "../../style/common/form.scss";
 import Layout from '../layout';
-
+import { validator } from '../../utils';
 
 
 
 function Register(props) {
-    const { cartProducts, plusProduct, minusProduct, handleSubmit, validateForm, formError } = props;
+    const { cartProducts } = props;
+    const [formError, setFormError] = useState({});
+
+    function plusProduct(product) {
+        props.requestAddProduct(product);
+    }
+
+    function minusProduct(product) {
+        props.requestMinusProduct(product);
+    }
+
+    function handleSubmit(event) {
+        event.preventDefault();
+        if (event.target.password.value !== event.target.confirmPassword.value) {
+            setFormError({ type: 'mismatchPassword', error: true, message: 'password and confirm password didnt match' });
+            return;
+        }
+        props.history.push('/');
+    }
+
+    function validateForm(e, type) {
+        let val = e.target.value;
+        let resp = validator.validateForm(val, type);
+        setFormError(resp);
+    }
+
 
     return <Layout cartProducts={cartProducts} plusProduct={plusProduct} minusProduct={minusProduct}>
 

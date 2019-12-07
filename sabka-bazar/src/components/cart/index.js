@@ -1,5 +1,5 @@
 import React from "react";
-import "../../style/cart.scss";
+import "./cart.scss";
 import { groupBy } from 'lodash';
 
 function Cart(props) {

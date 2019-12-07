@@ -1,5 +1,5 @@
 import React from "react";
-import "../../style/model.scss";
+import "./model.scss";
 import Cart from "../cart";
 
 function Model(props) {

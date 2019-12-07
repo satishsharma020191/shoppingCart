@@ -1,11 +1,40 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Layout from '../layout';
-import "../../style/plp.scss";
+import "./plp.scss";
 import { Link } from 'react-router-dom';
 import { chunk } from 'lodash';
 
 function Plp(props) {
-    const { products, cid, cartProducts, buyNow, plusProduct, minusProduct, displayProp, showMenu } = props;
+    const { products, categories, cartProducts } = props;
+    const [displayProp, setDisplayProp] = useState('');
+    let cid = props.match.params.cid;
+
+    function showMenu() {
+        if (displayProp === "block") {
+            setDisplayProp('none');
+        } else {
+            setDisplayProp('block');
+        }
+    }
+
+    console.log('printing home cat', categories);
+
+    useEffect(() => {
+        props.requestProductsData({ cid: cid, categories: categories });
+    }, [cid]);
+
+    function buyNow(product) {
+        props.requestaddToCart(product);
+
+    }
+
+    function plusProduct(product) {
+        props.requestAddProduct(product);
+    }
+
+    function minusProduct(product) {
+        props.requestMinusProduct(product);
+    }
     let rows = [];
 
     return <Layout cartProducts={cartProducts} plusProduct={plusProduct} minusProduct={minusProduct}>
