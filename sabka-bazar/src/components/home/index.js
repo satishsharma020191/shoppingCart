@@ -11,13 +11,6 @@ function Home(props) {
         props.requestCategoriesData();
     }, []);
 
-    // function plusProduct(product) {
-    //     props.requestAddProduct(product);
-    // }
-
-    // function minusProduct(product) {
-    //     props.requestMinusProduct(product);
-    // }
 
     return <Layout cartProducts={cartProducts}>
         <section id="main">

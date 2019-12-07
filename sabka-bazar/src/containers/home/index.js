@@ -2,7 +2,6 @@ import Home from '../../components/home';
 import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
 import { requestBannerData, requestCategoriesData } from "./actions";
-//import { requestAddProduct, requestMinusProduct } from "../plp/actions";
 
 const mapStateToProps = state => ({
     banners: state.home.banners,

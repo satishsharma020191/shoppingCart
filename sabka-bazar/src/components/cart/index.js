@@ -3,7 +3,6 @@ import "./cart.scss";
 import { groupBy } from 'lodash';
 
 function Cart(props) {
-    console.log('props in cart components', props);
     let groupedProducts = [];
     const { cartProducts } = props;
 
