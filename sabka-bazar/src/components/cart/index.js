@@ -3,8 +3,18 @@ import "./cart.scss";
 import { groupBy } from 'lodash';
 
 function Cart(props) {
+    console.log('props in cart components', props);
     let groupedProducts = [];
-    const { cartProducts, plusProduct, minusProduct } = props;
+    const { cartProducts } = props;
+
+    function plusProduct(product) {
+        props.requestAddProduct(product);
+    }
+
+    function minusProduct(product) {
+        props.requestMinusProduct(product);
+    }
+
     let totalCheckoutPrice = 0;
 
     if (cartProducts) {

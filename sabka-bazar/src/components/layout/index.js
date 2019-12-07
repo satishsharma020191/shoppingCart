@@ -6,10 +6,10 @@ import Header from '../header';
 import Footer from '../footer';
 
 function Layout(props) {
-    const { cartProducts, plusProduct, minusProduct } = props;
+    const { cartProducts } = props;
     return (<>
         <a class="skip-main" href="#main">Skip to main content</a>
-        <Header cartProducts={cartProducts} plusProduct={plusProduct} minusProduct={minusProduct} />
+        <Header cartProducts={cartProducts} />
         {props.children}
         <Footer /></>);
 }

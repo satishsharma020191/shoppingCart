@@ -28,16 +28,16 @@ function Plp(props) {
 
     }
 
-    function plusProduct(product) {
-        props.requestAddProduct(product);
-    }
+    // function plusProduct(product) {
+    //     props.requestAddProduct(product);
+    // }
 
-    function minusProduct(product) {
-        props.requestMinusProduct(product);
-    }
+    // function minusProduct(product) {
+    //     props.requestMinusProduct(product);
+    // }
     let rows = [];
 
-    return <Layout cartProducts={cartProducts} plusProduct={plusProduct} minusProduct={minusProduct}>
+    return <Layout cartProducts={cartProducts}>
         <section className="section-plp" id="main">
             <div className="row">
                 <div className="col span-2-of-10 sidebar">

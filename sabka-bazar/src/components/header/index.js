@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import Modal from "../model";
 
 function Header(props) {
-    const { cartProducts, plusProduct, minusProduct } = props;
+    const { cartProducts } = props;
     const [show, setModel] = useState(false);
     const [displayProp, setDisplayProp] = useState('none');
 
@@ -79,7 +79,7 @@ function Header(props) {
             </div>
         </header>
 
-        <Modal show={show} handleClose={hideModal} cartProducts={cartProducts} plusProduct={plusProduct} minusProduct={minusProduct} />
+        <Modal show={show} handleClose={hideModal} />
     </div>
 }
 

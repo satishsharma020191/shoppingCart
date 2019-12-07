@@ -2,7 +2,7 @@ import Home from '../../components/home';
 import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
 import { requestBannerData, requestCategoriesData } from "./actions";
-import { requestAddProduct, requestMinusProduct } from "../plp/actions";
+//import { requestAddProduct, requestMinusProduct } from "../plp/actions";
 
 const mapStateToProps = state => ({
     banners: state.home.banners,
@@ -10,6 +10,6 @@ const mapStateToProps = state => ({
     cartProducts: state.plp.cartProducts
 });
 
-const mapDispatchToProps = dispatch => bindActionCreators({ requestBannerData, requestCategoriesData, requestAddProduct, requestMinusProduct }, dispatch);
+const mapDispatchToProps = dispatch => bindActionCreators({ requestBannerData, requestCategoriesData }, dispatch);
 
 export default connect(mapStateToProps, mapDispatchToProps)(Home);

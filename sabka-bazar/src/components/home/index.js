@@ -11,15 +11,15 @@ function Home(props) {
         props.requestCategoriesData();
     }, []);
 
-    function plusProduct(product) {
-        props.requestAddProduct(product);
-    }
+    // function plusProduct(product) {
+    //     props.requestAddProduct(product);
+    // }
 
-    function minusProduct(product) {
-        props.requestMinusProduct(product);
-    }
+    // function minusProduct(product) {
+    //     props.requestMinusProduct(product);
+    // }
 
-    return <Layout cartProducts={cartProducts} plusProduct={plusProduct} minusProduct={minusProduct}>
+    return <Layout cartProducts={cartProducts}>
         <section id="main">
             <div className="row home-tile clearfix">
                 <Carousel banners={banners} />
