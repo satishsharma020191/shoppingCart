@@ -3,7 +3,7 @@ import "./cart.scss";
 import groupBy from 'lodash.groupby';
 import Lineitem from './lineItem';
 import Footer from './footer';
-import cartOffer from './cartOffer';
+import CartOffer from './cartOffer';
 
 function Cart(props) {
     let groupedProducts = [];
@@ -40,7 +40,7 @@ function Cart(props) {
                 </div>
 
 
-                <cartOffer cartProducts={cartProducts} />
+                <CartOffer cartProducts={cartProducts} />
 
 
             </div>
