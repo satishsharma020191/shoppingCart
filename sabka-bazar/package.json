@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "lodash.groupby": "^4.6.0",
     "node-sass": "^4.13.0",
     "pure-react-carousel": "^1.23.2",
     "react": "^16.11.0",
