@@ -14,7 +14,6 @@ function Header(props) {
     };
 
     let hideModal = () => {
-        console.log('handle close clicked');
         setModel(false);
     };
 
