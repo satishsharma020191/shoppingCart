@@ -102,6 +102,10 @@
     .products {
         width: 100%;
         .item {
+            h3{
+                font-size: 16px;
+                height: 40px;
+            }
             width: 50%;
             border-bottom: none;
             margin-left: 2px;
@@ -110,7 +114,7 @@
                 .item-inner-content{
                     width: 100%;
                     p{
-                        height: 110px;
+                        height: 170px;
                     }
 
                     .price-tag {
