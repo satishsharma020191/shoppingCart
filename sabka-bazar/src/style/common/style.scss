@@ -154,7 +154,69 @@
     }
 // mobile css end 
 
+/*  GROUPING  ============================================================================= */
 
+.row {
+    zoom: 1; /* For IE 6/7 (trigger hasLayout) */
+}
+
+.row:before,
+.row:after {
+    content:"";
+    display:table;
+}
+.row:after {
+    clear:both;
+}
+
+
+/*  GRID COLUMN SETUP   ==================================================================== */
+
+.col {
+	display: block;
+	float:left;
+	margin: 1% 0 1% 1.6%;
+}
+
+.col:first-child { margin-left: 0; } /* all browsers except IE6 and lower */
+
+
+.span-1-of-12 {
+    width: 100%; 
+} 
+
+.span-2-of-12 {
+    width: 100%; 
+}
+
+.span-6-of-12 {
+    width: 100%; 
+}
+
+.span-1-of-2 {
+    width: 100%;
+}
+
+.span-2-of-10 {
+    width: 100%; 
+}
+
+.span-8-of-10 {
+    width: 100%;
+}
+
+.span-1-of-4 {
+    width: 100%; 
+}
+
+/*  REMOVE MARGINS AS ALL GO FULL WIDTH AT 480 PIXELS */
+
+@media only screen and (max-width: 480px) {
+	.col { 
+		/*margin: 1% 0 1% 0%;*/
+        margin: 0;
+	}
+}
 
 @media screen and (min-width: 768px){ 
  *{
@@ -214,5 +276,34 @@ header {
         img{
             width: 90%;
         }
+            }
+
+
+            .span-1-of-12 {
+                width: 6.86%; 
+            } 
+
+            .span-2-of-12 {
+                width: 15.33%; 
+            }
+
+            .span-6-of-12 {
+                width: 49.2%; 
+            }
+
+            .span-1-of-2 {
+                width: 49.2%;
+            }
+
+            .span-2-of-10 {
+                width: 18.72%; 
+            }
+
+            .span-8-of-10 {
+                width: 79.68%;
+            }
+
+            .span-1-of-4 {
+                width: 23.8%; 
             }
 }    
