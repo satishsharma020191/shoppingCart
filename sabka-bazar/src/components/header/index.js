@@ -2,6 +2,7 @@ import React, { useState } from "react";
 //import "../../style/common/ionicons.scss";
 import { Link } from "react-router-dom";
 import Modal from "../model";
+import Cart from "../../containers/cart";
 
 function Header(props) {
     const { cartProducts } = props;
@@ -79,7 +80,9 @@ function Header(props) {
             </div>
         </header>
 
-        <Modal show={show} handleClose={hideModal} />
+        <Modal show={show}>
+            <Cart handleClose={hideModal} />
+        </Modal>
     </div>
 }
 
