@@ -24,7 +24,7 @@ function Cart(props) {
         groupedProducts = groupBy(cartProducts, 'id');
     }
 
-    return <div className="shopping-cart" tabindex="0" role="dialog" aria-labelledby="dialogTitle" aria-describedby="dialogDesc">
+    return <div className="shopping-cart" tabIndex="0" role="dialog" aria-labelledby="dialogTitle" aria-describedby="dialogDesc">
         <div className="shopping-cart-contents">
             <div className="shopping-cart-header">
                 <h2 id="dialogTitle">My Cart({cartProducts ? cartProducts.length : 0} item)</h2>
@@ -35,7 +35,7 @@ function Cart(props) {
                     {groupedProducts && Object.values(groupedProducts).map((obj, i) => {
                         totalCheckoutPrice += obj[0].price * obj.length;
                         return (
-                            <Lineitem i={i} obj={obj} plusProduct={plusProduct} minusProduct={minusProduct} />
+                            <Lineitem key={i} i={i} obj={obj} plusProduct={plusProduct} minusProduct={minusProduct} />
                         )
                     })}
                 </div>
