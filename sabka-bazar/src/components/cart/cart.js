@@ -4,6 +4,7 @@ import groupBy from 'lodash.groupby';
 import Lineitem from './lineItem';
 import Footer from './footer';
 import CartOffer from './cartOffer';
+import Button from '../button';
 
 function Cart(props) {
     let groupedProducts = [];
@@ -27,7 +28,7 @@ function Cart(props) {
         <div className="shopping-cart-contents">
             <div className="shopping-cart-header">
                 <h2 id="dialogTitle">My Cart({cartProducts ? cartProducts.length : 0} item)</h2>
-                <button className="ion-ios-close-empty icon-close" aria-label="cart close" onClick={props.handleClose}></button>
+                <Button className={`ion-ios-close-empty icon-close`} ariaLabel={`cart close`} onClick={props.handleClose}></Button>
             </div>
             <div className="cart-body">
                 <div className="cart-items">

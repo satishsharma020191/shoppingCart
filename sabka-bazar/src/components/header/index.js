@@ -2,6 +2,7 @@ import React, { useState } from "react";
 //import "../../style/common/ionicons.scss";
 import { Link } from "react-router-dom";
 import Modal from "../model";
+import Button from "../button";
 
 function Header(props) {
     const { cartProducts } = props;
@@ -71,7 +72,7 @@ function Header(props) {
                         </ul>
                     </nav>
                     <div className="row">
-                        <button className="btn-cart" aria-label={`${cartProducts ? cartProducts.length : 0} item cart`} onClick={showModal}><img src={'/static/images/cart.svg'} alt='cart icon' /><span>{cartProducts ? cartProducts.length : 0} {cartProducts && cartProducts.length > 1 ? 'items' : 'item'}</span></button>
+                        <Button className="btn-cart" ariaLabel={`${cartProducts ? cartProducts.length : 0} item cart`} onClick={showModal}><img src={'/static/images/cart.svg'} alt='cart icon' /><span>{cartProducts ? cartProducts.length : 0} {cartProducts && cartProducts.length > 1 ? 'items' : 'item'}</span></Button>
                     </div>
 
                 </div>
