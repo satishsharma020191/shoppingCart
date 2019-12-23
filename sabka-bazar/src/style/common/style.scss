@@ -57,7 +57,8 @@
     .topnav{
         display: block;
         overflow: hidden;
-        background-color: #a6a6a6;
+        border-bottom: 2px solid #cfcfcf;
+        //background-color: #a6a6a6;
         img{
             width: 20%;
          }
@@ -82,7 +83,7 @@
             }
           }
           a:hover {
-            background-color: #ddd;
+            //background-color: #ddd;
             color: black;
           }      
     }
@@ -102,7 +103,7 @@
     display: block;
     width: 50%;
     padding: 4% 4% 1% 4%;
-    background-color: grey;
+    background-color: #F0F0F0;
     opacity: 0.7;
     text-align: center;
     img {
@@ -120,7 +121,7 @@
   // footer css 
   footer {
         width: 100%;
-        background-color:#eeeeee;
+        background-color:#F0F0F0;
         position: fixed;
         bottom: 0;
         left: 0;
@@ -201,7 +202,7 @@
 }
 
 .span-1-of-2 {
-    width: 100%;
+    width: 49.2%;
 }
 
 .span-2-of-10 {
@@ -225,7 +226,7 @@
     }
     
     *{
-        margin: 0px;
+        margin: 0;
     } 
 }
 
@@ -267,7 +268,7 @@ header {
         display: inline-block;
         width: 50%;
         padding: 4% 4% 1% 4%;
-        background-color: #eeeeee;
+        background-color: #F0F0F0;
         opacity: 0.7;
         text-align: center;
         margin-left: 60px;

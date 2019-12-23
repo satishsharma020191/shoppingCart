@@ -1,8 +1,9 @@
 
 .section-plp{
     .sidebar {
-        background-color: #a6a6a6;
+        // background-color: #a6a6a6;
         width: 100%;
+        margin-top: 20px;
         ul {
             padding-left: 0px;
         }
@@ -18,7 +19,8 @@
         .topnavside{
             display: block;
             overflow: hidden;
-            background-color: #ee5c74;
+            background-color: #C03057;
+            padding: 5px;
             //position: relative;
             .iconDown {
                 float: right;
@@ -74,11 +76,13 @@
                         margin-top: 0px;
                         font-size: 12px;
                         text-align: auto;
-                        background-color:#eeeeee;
+                        background-color:#F0F0F0;
+                        overflow: auto;
                     }
             
                     .price-tag 
                     {
+                        margin-top: 20px;
                         .price-tag-web{
                             display: none;
                         }
@@ -87,7 +91,7 @@
                         }
                         overflow: hidden;
                         button {
-                        background-color: rgb(238, 92, 116);
+                        background-color:#C03057;
                         color: #fff;
                         text-decoration: none;
                         padding: 4px;
@@ -141,10 +145,10 @@
         .sidebar {
             width: 18.72%;
             height: 200vh;
-            background-color: #eeeeee;
+            background-color: #F0F0F0;
             .topnavside{
                 display: block;
-                background-color: #eeeeee;
+                background-color: #F0F0F0;
                 .iconDown {
                     display: none;
                   }

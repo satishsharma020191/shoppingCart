@@ -1,3 +1,4 @@
+
 .shopping-cart {
    width: 100%;
    max-height: 100%;
@@ -43,7 +44,7 @@
     .lowest-price-gauranteed-blank{
         width:100%;
         height: 100%;
-        background-color: #ffffff;
+        background-color: #EEEEEE;
         width: 100%;
         text-align: center;
         padding-top:30%;
@@ -52,6 +53,7 @@
     .footer-checkout-bottom {
         background-color: white;
         box-sizing: border-box;
+        padding: 0 5px 5px 5px;
         .footer-checkout{
             text-align: center;
             width: 100%;
@@ -60,7 +62,7 @@
             border-radius: 3px;
             //margin: 10px;
             //overflow: hidden;
-            background-color: rgb(214, 68, 92);
+            background-color:#C03057;
             .checkout-price{
                 float:right;
             }
@@ -79,7 +81,7 @@
 
         .shopping-cart-header {
             padding-bottom:5px;
-            background-color: rgb(56, 55, 55);
+            background-color: #1C2124;
             color: white;
             overflow: hidden;
             h2 {
@@ -114,6 +116,7 @@
             box-sizing: border-box;
             padding: 5px;
             margin-top: 10px;
+            overflow: auto;
 
             .apple-logo {
                 margin-left: 2px;
@@ -122,6 +125,7 @@
                 height: 70px;
                 width: auto;
                 float: left;
+                clear: both;
             }
         }
 
