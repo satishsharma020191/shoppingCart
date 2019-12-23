@@ -74,7 +74,7 @@
                         margin-top: 0px;
                         font-size: 12px;
                         text-align: auto;
-                        background-color:#a6a6a6;
+                        background-color:#eeeeee;
                     }
             
                     .price-tag 
@@ -133,9 +133,11 @@
         margin: 0 auto;
         .sidebar {
             width: 18.72%;
+            height: 200vh;
+            background-color: #eeeeee;
             .topnavside{
                 display: block;
-                background-color: #a6a6a6;
+                background-color: #eeeeee;
                 .iconDown {
                     display: none;
                   }

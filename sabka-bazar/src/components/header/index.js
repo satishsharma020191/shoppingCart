@@ -55,16 +55,16 @@ function Header(props) {
 
             <div className="row webHeader">
                 <div className="col span-1-of-12"></div>
-                <div className="col span-2-of-12 sabka-bazar-logo">
+                <div className="col-header span-2-of-12 sabka-bazar-logo">
                     <Link to={'/'}><img src={'/static/images/logo.png'} alt="logo" /></Link>
                 </div>
-                <nav aria-label="header" className="col span-6-of-12 navigate navigation-main">
+                <nav aria-label="header" className="col-header span-6-of-12 navigate navigation-main">
                     <ul>
                         <li><Link to={'/'}>Home</Link></li>
                         <li><Link to={'/plp/all'}>Products</Link></li>
                     </ul>
                 </nav>
-                <div className="col span-2-of-12 navigate">
+                <div className="col-header span-2-of-12 navigate">
                     <nav aria-label="login" className="row">
                         <ul>
                             <li><Link to={'/login'}>Sign in</Link></li>
