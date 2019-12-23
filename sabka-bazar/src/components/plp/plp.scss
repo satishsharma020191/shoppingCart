@@ -79,6 +79,12 @@
             
                     .price-tag 
                     {
+                        .price-tag-web{
+                            display: none;
+                        }
+                        .price-tag-mobile{
+                            display: block;
+                        }
                         overflow: hidden;
                         button {
                         background-color: rgb(238, 92, 116);
@@ -87,6 +93,7 @@
                         padding: 4px;
                         margin-left: 2px;
                         bottom: 0;
+                        border: none;
                         font-size: 16px;
                         float: right;
                     
@@ -171,6 +178,12 @@
                         }
 
                         .price-tag {
+                            .price-tag-web{
+                                display: block;
+                            }
+                            .price-tag-mobile{
+                                display: none;
+                            }
                             font-size: 14px;
                         }
                         }

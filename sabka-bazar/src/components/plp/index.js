@@ -56,7 +56,8 @@ function Plp(props) {
                                     <div className="item-inner-content">
                                         <p>{obj.description}</p>
                                         <div className="price-tag">
-                                            MRP Rs. {obj.price} <button onClick={() => buyNow(obj)} aria-label={`Buy ${obj.name} at Rupees ${obj.price}`}>Buy Now</button>
+                                            <span class="price-tag-web">MRP Rs. {obj.price} <button onClick={() => buyNow(obj)} aria-label={`Buy ${obj.name} at Rupees ${obj.price}`}>Buy Now</button></span>
+                                            <span class="price-tag-mobile"><button onClick={() => buyNow(obj)} aria-label={`Buy ${obj.name} at Rupees ${obj.price}`}>Buy Now @ MRP Rs. {obj.price}</button></span>
                                         </div>
                                     </div>
                                 </div>
