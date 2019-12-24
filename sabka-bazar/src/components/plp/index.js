@@ -10,12 +10,15 @@ function Plp(props) {
     let cid = props.match.params.cid;
 
     function showMenu() {
+        if(window.innerWidth <= 768){
         if (displayProp === "block") {
             setDisplayProp('none');
         } else {
             setDisplayProp('block');
         }
     }
+    }
+
 
     useEffect(() => {
         props.requestProductsData({ cid: cid, categories: categories });
@@ -34,7 +37,7 @@ function Plp(props) {
                 <div className="col span-2-of-10 sidebar">
                     <nav className="topnavside">
                         <a className="menuFilter" onClick={showMenu}><span>{cid.replace(/-/g, ' ')}</span><i className="ion-ios-arrow-down iconDown"></i></a>
-                        <ul className="myLinks" style={{ display: displayProp }}>
+                        <ul className="myLinks" style={{ display: displayProp }} onClick={showMenu}>
                             <li className={cid === 'fruit-and-veg' ? 'active' : ''}><Link to={'/plp/fruit-and-veg'}>Fruits & Vegitables</Link></li>
                             <li className={cid === 'bakery-cakes-dairy' ? 'active' : ''}><Link to={'/plp/bakery-cakes-dairy'}>Backery Cakes and Dairy</Link></li>
                             <li className={cid === 'beverages' ? 'active' : ''}><Link to={'/plp/beverages'}>Beverages</Link></li>
@@ -57,7 +60,7 @@ function Plp(props) {
                                         <p>{obj.description}</p>
                                         <div className="price-tag">
                                             <span class="price-tag-web">MRP Rs. {obj.price} <button onClick={() => buyNow(obj)} aria-label={`Buy ${obj.name} at Rupees ${obj.price}`}>Buy Now</button></span>
-                                            <span class="price-tag-mobile"><button onClick={() => buyNow(obj)} aria-label={`Buy ${obj.name} at Rupees ${obj.price}`}>Buy Now @ MRP Rs. {obj.price}</button></span>
+                                            <span class="price-tag-mobile"><button onClick={() => buyNow(obj)} aria-label={`Buy ${obj.name} at Rupees ${obj.price}`}>Buy Now @ Rs.{obj.price}</button></span>
                                         </div>
                                     </div>
                                 </div>
