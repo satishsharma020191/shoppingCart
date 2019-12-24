@@ -9,6 +9,17 @@ function Header(props) {
     const { cartProducts } = props;
     const [show, setModel] = useState(false);
     const [displayProp, setDisplayProp] = useState('none');
+    let activeData = window.location.pathname;
+    let active = '';
+    if(activeData ==='/plp/all' || activeData ==='/plp/beauty-hygiene' || activeData ==='/plp/fruit-and-veg' || activeData ==='/plp/bakery-cakes-dairy' || activeData ==='/plp/beverages' || activeData ==='/plp/baby'){
+        active='plp';
+    }else if(activeData ==='/'){
+        active='home';
+    }else if(activeData ==='/login'){
+        active='login';
+    }else if(activeData ==='/register'){
+        active='register';
+    }
 
     let showModal = () => {
         setModel(true);
@@ -60,15 +71,15 @@ function Header(props) {
                 </div>
                 <nav aria-label="header" className="col-header span-6-of-12 navigate navigation-main">
                     <ul>
-                        <li><Link to={'/'}>Home</Link></li>
-                        <li><Link to={'/plp/all'}>Products</Link></li>
+                        <li className={active==='home' ? 'active' : ''}><Link to={'/'}>Home</Link></li>
+                        <li className={active==='plp' ? 'active' : ''}><Link to={'/plp/all'}>Products</Link></li>
                     </ul>
                 </nav>
                 <div className="col-header span-3-of-12 navigate">
                     <nav aria-label="login" className="row">
                         <ul>
-                            <li><Link to={'/login'}>Sign in</Link></li>
-                            <li><Link to={'/register'}>Register</Link></li>
+                            <li className={active==='login' ? 'active' : ''}><Link to={'/login'}>Sign in</Link></li>
+                            <li className={active==='register' ? 'active' : ''}><Link to={'/register'}>Register</Link></li>
                         </ul>
                     </nav>
                     <div className="row">
