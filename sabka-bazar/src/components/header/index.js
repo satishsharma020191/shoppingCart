@@ -64,7 +64,7 @@ function Header(props) {
                         <li><Link to={'/plp/all'}>Products</Link></li>
                     </ul>
                 </nav>
-                <div className="col-header span-2-of-12 navigate">
+                <div className="col-header span-3-of-12 navigate">
                     <nav aria-label="login" className="row">
                         <ul>
                             <li><Link to={'/login'}>Sign in</Link></li>
@@ -76,7 +76,7 @@ function Header(props) {
                     </div>
 
                 </div>
-                <div className="col span-1-of-12"></div>
+        
             </div>
         </header>
 
