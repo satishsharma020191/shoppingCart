@@ -6,6 +6,10 @@
    //  margin: 0px;
     }
  
+.drop-menu{
+    border-right: 2px solid #000;
+}
+
     a {
         text-decoration: none;
         color: #000;
@@ -55,10 +59,13 @@
         }
     }
 
+    
+
     .topnav{
         display: block;
         overflow: hidden;
         border-bottom: 2px solid #cfcfcf;
+        position: relative;
         //background-color: #a6a6a6;
         img{
             width: 20%;
@@ -111,10 +118,11 @@
 
   .btn-cart {
     display: block;
-    width: 50%;
-    padding: 4% 4% 1% 4%;
+    width: 100%;
+    padding: 19% 0% 3% 2%;
     background-color: #F0F0F0;
     opacity: 0.7;
+    border: none;
     text-align: center;
     img {
         width: 25px;
@@ -150,6 +158,14 @@
     
     .sm-3-of-10 {
         width: 28.88%;
+        background-color: #F0F0F0;
+        position: relative;
+    }
+
+    .mob-menu {
+       // border-left: 2px solid black;
+       // height: 100%;
+        position: absolute;
     }
 
     .sm-2-of-3 {
@@ -244,7 +260,7 @@
     } 
 }
 
-@media screen and (min-width: 768px){ 
+@media screen and (min-width: 736px){ 
  *{
      font-size: 18px;
      //margin: 1px;
@@ -275,6 +291,7 @@ header {
 
 .topnav{
     display: none;
+    
 }
 
 .webHeader{
@@ -292,8 +309,8 @@ header {
         border: none;
         // margin-top: 35px;
         img {
-            //width: 25px;
-            // height: 25px;
+            width: 25px;
+            height: 25px;
         }
         span {
             vertical-align: super;
