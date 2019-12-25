@@ -132,7 +132,15 @@ box-shadow: 3px 3px 2px rgb(250, 249, 249);
 .home-tile {
     height: auto;
     margin:0 12%;
-    border-bottom: 2px solid #cfcfcf;
+    //border-bottom: 2px solid #cfcfcf;
+    background: /* gradient can be an image */
+        linear-gradient(
+          to left, white, #cfcfcf 25%,  #cfcfcf 75%, white
+        )
+        left 
+        bottom  
+        no-repeat; 
+      background-size:100% 3px ;
 /* box-shadow: 3px 3px 2px rgb(250, 249, 249); */
 }
 

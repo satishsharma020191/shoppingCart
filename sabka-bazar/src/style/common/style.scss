@@ -92,12 +92,20 @@
 
     .webHeader{
         display: none;
+        background: /* gradient can be an image */
+        linear-gradient(
+          to left, white, #cfcfcf 25%,  #cfcfcf 75%, white
+        )
+        left 
+        bottom  
+        no-repeat; 
+      background-size:100% 2px ;
     }
   
   .active {
-    background-color: rgb(241, 131, 160);
-    color: white;
+    background-color: #C03057;
     padding: 4px;
+    a {color: white;}
   }
 
 
