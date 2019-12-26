@@ -1,0 +1,80 @@
+input {
+    border: 0;
+    outline: 0;
+    width: 80%;
+    background: transparent;
+    border-bottom: 1px solid #cfcfcf;
+    padding-top: 10px;  
+}
+
+input:hover, input:active {
+    outline: 0;
+    background: transparent;
+    border-bottom: 2px solid #1a76ac;
+    
+}
+
+ .btn-login {
+    display: inline-block;
+    width: 80%;
+    background-color: rgb(214, 68, 92);
+    text-align: center;
+    color: #fff;
+    text-decoration: none;
+    padding: 5px;
+    border: none;
+    margin-top: 30px;
+
+}
+
+.section-form {
+        padding-left: 10%;
+        padding-right: 10%;
+        text-align: center;
+    }
+
+.form-input {
+            padding: 2% 0;
+            p{
+                margin-top: 0px;
+                color: red;
+                font-size: 80%;
+            }
+    }    
+
+label {
+        font-size: 70%;
+                color: #1a76ac;
+        } 
+        
+
+        .form-heading{
+            width: 100%;
+            h1{
+                font-size: 150%;
+            }
+
+            p {
+                font-size: 80%;
+            }
+        }
+
+        .form-data{
+            width: 100%;
+        }
+
+@media screen and (min-width: 768px){
+        .form-heading {
+            width: 49.2%;
+        }
+
+        .form-data {
+            width: 49.2%;
+        }
+
+        .section-form {
+            padding-left: 20%;
+            padding-right: 20%;
+            text-align: justify;
+        }
+}        
