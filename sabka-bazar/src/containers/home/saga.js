@@ -1,6 +1,6 @@
 import { call, put, takeEvery } from "redux-saga/effects";
 
-import { receivedBannerData, receivedCategoriesData } from "./actions";
+import { receivedBannerData, receivedCategoriesData, setErrorToast } from "./actions";
 import { REQUEST_BANNER_DATA, REQUEST_CATEGORIES_DATA } from "./constants";
 import { fetchBannerData, fetchCategoriesData } from './api';
 
@@ -10,7 +10,8 @@ function* getBannerData() {
         const data = yield call(fetchBannerData);
         yield put(receivedBannerData(data));
     } catch (e) {
-        console.log(e);
+        yield put(setErrorToast(e));
+        //console.log(e);
     }
 }
 
@@ -19,7 +20,8 @@ function* getCategoriesData() {
         const data = yield call(fetchCategoriesData);
         yield put(receivedCategoriesData(data));
     } catch (e) {
-        console.log(e);
+        yield put(setErrorToast(e));
+        //console.log(e);
     }
 }
 
