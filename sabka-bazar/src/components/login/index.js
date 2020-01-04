@@ -1,21 +1,13 @@
 import React, { useState } from "react";
-import Layout from '../layout';
+import Layout from '../../containers/layout';
 import "../../style/common/form.scss";
 import { validator } from '../../utils';
+import Button from '../button';
 
 
 function Login(props) {
-    const { cartProducts } = props;
 
     const [formError, setFormError] = useState({});
-
-    function plusProduct(product) {
-        props.requestAddProduct(product);
-    }
-
-    function minusProduct(product) {
-        props.requestMinusProduct(product);
-    }
 
     function handleSubmit(event) {
         event.preventDefault();
@@ -29,7 +21,7 @@ function Login(props) {
     }
 
 
-    return <Layout cartProducts={cartProducts} plusProduct={plusProduct} minusProduct={minusProduct}>
+    return <Layout>
         <section className="section-form" id="main">
             <div className="row">
                 <form method="post" onSubmit={(e) => handleSubmit(e)}>
@@ -56,7 +48,7 @@ function Login(props) {
                             </div>
 
                             <div className="row form-input">
-                                <button type="submit" className="btn-login">Login</button>
+                                <Button type="submit" className={'btn-login'}>Login</Button>
                             </div>
                         </div>
                     </div>

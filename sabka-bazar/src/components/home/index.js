@@ -1,21 +1,25 @@
 import React, { useEffect } from "react";
 import "./home.scss";
-import Layout from '../layout';
+import Layout from '../../containers/layout';
 import { Link } from 'react-router-dom';
 import Carousel from '../carousel';
 function Home(props) {
-    const { banners, categories, cartProducts } = props;
+    const { banners, categories } = props;
 
     useEffect(() => {
-        props.requestBannerData();
-        props.requestCategoriesData();
+        onHomePageMount();
     }, []);
 
+    function onHomePageMount() {
+        props.requestBannerData();
+        props.requestCategoriesData();
+    }
 
-    return <Layout cartProducts={cartProducts}>
+
+    return <Layout>
         <section id="main">
             <div className="row home-tile clearfix">
-                <Carousel banners={banners} />
+                <Carousel naturalSlideWidth={100} naturalSlideHeight={30} isPlaying={true} banners={banners} />
             </div>
         </section>
 

@@ -6,7 +6,6 @@ import { requestBannerData, requestCategoriesData } from "./actions";
 const mapStateToProps = state => ({
     banners: state.home.banners,
     categories: state.home.categories,
-    cartProducts: state.plp.cartProducts
 });
 
 const mapDispatchToProps = dispatch => bindActionCreators({ requestBannerData, requestCategoriesData }, dispatch);

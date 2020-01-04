@@ -1,21 +1,13 @@
 import React, { useState } from "react";
 import "../../style/common/form.scss";
-import Layout from '../layout';
+import Layout from '../../containers/layout';
 import { validator } from '../../utils';
+import Button from '../button';
 
 
 
 function Register(props) {
-    const { cartProducts } = props;
     const [formError, setFormError] = useState({});
-
-    function plusProduct(product) {
-        props.requestAddProduct(product);
-    }
-
-    function minusProduct(product) {
-        props.requestMinusProduct(product);
-    }
 
     function handleSubmit(event) {
         event.preventDefault();
@@ -33,7 +25,7 @@ function Register(props) {
     }
 
 
-    return <Layout cartProducts={cartProducts} plusProduct={plusProduct} minusProduct={minusProduct}>
+    return <Layout>
 
         <section className="section-form" id="main">
 
@@ -75,7 +67,7 @@ function Register(props) {
                             </div>
 
                             <div className="row form-input">
-                                <button type="submit" className="btn-login" aria-describedby="error-mismatchPassword">Signup</button>
+                                <Button type="submit" className="btn-login" ariaDescribedby="error-mismatchPassword">Signup</Button>
                                 <p id="error-mismatchPassword">{formError.error && formError.type === 'mismatchPassword' ? formError.message : ''}</p>
                             </div>
                         </div>

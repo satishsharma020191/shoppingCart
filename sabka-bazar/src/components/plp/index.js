@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
-import Layout from '../layout';
+import Layout from '../../containers/layout';
 import "./plp.scss";
 import { Link } from 'react-router-dom';
 import { chunk } from 'lodash';
+import Button from '../button';
 
 function Plp(props) {
     const { products, categories, cartProducts } = props;
@@ -10,13 +11,13 @@ function Plp(props) {
     let cid = props.match.params.cid;
 
     function showMenu() {
-        if(window.innerWidth <= 768){
-        if (displayProp === "block") {
-            setDisplayProp('none');
-        } else {
-            setDisplayProp('block');
+        if (window.innerWidth <= 768) {
+            if (displayProp === "block") {
+                setDisplayProp('none');
+            } else {
+                setDisplayProp('block');
+            }
         }
-    }
     }
 
 
@@ -31,7 +32,7 @@ function Plp(props) {
 
     let rows = [];
 
-    return <Layout cartProducts={cartProducts}>
+    return <Layout>
         <section className="section-plp" id="main">
             <div className="row">
                 <div className="col span-2-of-10 sidebar">
@@ -59,8 +60,8 @@ function Plp(props) {
                                     <div className="item-inner-content">
                                         <p>{obj.description}</p>
                                         <div className="price-tag">
-                                            <span className="price-tag-web">MRP Rs. {obj.price} <button onClick={() => buyNow(obj)} aria-label={`Buy ${obj.name} at Rupees ${obj.price}`}>Buy Now</button></span>
-                                            <span className="price-tag-mobile"><button onClick={() => buyNow(obj)} aria-label={`Buy ${obj.name} at Rupees ${obj.price}`}>Buy Now @ Rs.{obj.price}</button></span>
+                                            <span className="price-tag-web">MRP Rs. {obj.price} <Button onClick={() => buyNow(obj)} ariaLabel={`Buy ${obj.name} at Rupees ${obj.price}`}>Buy Now</Button></span>
+                                            <span className="price-tag-mobile"><Button onClick={() => buyNow(obj)} ariaLabel={`Buy ${obj.name} at Rupees ${obj.price}`}>Buy Now @ Rs.{obj.price}</Button></span>
                                         </div>
                                     </div>
                                 </div>

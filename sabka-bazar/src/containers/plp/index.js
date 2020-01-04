@@ -6,7 +6,6 @@ import { requestProductsData, requestaddToCart } from "./actions";
 const mapStateToProps = (state) => ({
     products: state.plp.products,
     categories: state.home.categories,
-    cartProducts: state.plp.cartProducts
 });
 const mapDispatchToProps = (dispatch) => bindActionCreators({ requestProductsData, requestaddToCart }, dispatch);
 
