@@ -1,0 +1,193 @@
+
+.shopping-cart {
+   width: 100%;
+   max-height: 100%;
+    float: right;
+    background-color: white;
+    border-radius: 3px;
+
+    .shopping-cart-contents {
+        background-color:rgb(229, 226, 226);
+
+        .lowest-price-gauranteed {
+           // position: relative;
+    margin-top: 10px;
+    width: 92%;
+    margin-left:4%;
+    background-color:  rgb(255, 253, 253);
+    border: 2px solid white;
+    border-radius: 2px;
+    overflow: hidden;
+    display: inline-flex;
+    
+    .lowest-price-logo {
+       // position: relative;
+        margin-left: 1px;
+        width: 20%;
+        float: left; 
+        img {
+            margin-top: 14%;
+            width: 100%;
+        }
+    }
+    .cheaper-anywhere{
+        position: relative;
+            margin-left: 5px;
+            width: 80%;
+            p{
+                font-size: 14px;
+            }
+    }
+           
+    }
+
+    .lowest-price-gauranteed-blank{
+        width:100%;
+        height: 100%;
+        background-color: #EEEEEE;
+        width: 100%;
+        text-align: center;
+        padding-top:30%;
+    }
+
+    .footer-checkout-bottom {
+        background-color: white;
+        box-sizing: border-box;
+        padding: 0 5px 5px 5px;
+        .footer-checkout{
+            text-align: center;
+            width: 100%;
+            color: white;
+            padding: 10px;
+            border-radius: 3px;
+            //margin: 10px;
+            //overflow: hidden;
+            background-color:#C03057;
+            .checkout-price{
+                float:right;
+            }
+            .checkout-text{
+                float: left;
+            }
+        }
+        .footer-bottom {
+            p{
+            padding-top:14px;
+            text-align: center;
+            font-size: 14px;
+        }
+    }
+    }
+
+        .shopping-cart-header {
+            padding-bottom:5px;
+            background-color: #1C2124;
+            color: white;
+            overflow: hidden;
+            h2 {
+                margin-left: 5%;
+                margin-top: 5%;
+                font-weight: bold;
+            }
+
+            .icon-close {
+                font-size: 35px;
+                float: right;
+                margin-top: -32px;
+                padding-right: 15px;
+                //padding: 0;
+                border: none;
+                background: none;
+                color: rgb(229, 226, 226);
+            }
+
+            p{
+                padding-left: 0px;
+                padding-top: 0px;
+                height: 5px;
+            }
+        }
+        .cart-body{
+            height: 350px;
+            overflow:auto;
+    .cart-items{    
+        .shopping-cart-item {
+            background-color: rgb(255, 253, 253);
+            box-sizing: border-box;
+            padding: 5px;
+            margin-top: 10px;
+            overflow: auto;
+
+            .apple-logo {
+                margin-left: 2px;
+                margin-top: 2px;
+                img {
+                height: 70px;
+                width: auto;
+                float: left;
+                clear: both;
+            }
+        }
+
+        p{
+            //margin-left: 100px;
+            font-size: 16px;
+        }
+        i {
+            margin-left: 1px;
+        }
+
+        .icon-close {
+            border: none;
+            background: none;
+        }
+
+        .icon-minus {
+            border: none;
+            background: none;
+        }
+
+        .minus-1 {
+            margin-left: 10px;
+        }
+
+        .total-product-price {
+            float: right;
+            // padding-top: 20px;
+        }
+
+        .icon-plus {
+            margin-left: 10px;
+            border: none;
+            background: none;
+         
+        }
+
+        .icon-close {
+            // font-size: 40px;
+            margin-left: 10px;
+         
+        }
+
+        .product-price {
+            margin-left: 10px;
+        }
+
+        }
+    }
+}
+    }
+}
+
+
+@media screen and (min-width: 480px){
+    .shopping-cart{
+        position: absolute;
+        width: 30%;
+        top:15%;
+        left:60%;
+    }
+    
+}
+
+
